@@ -1,9 +1,9 @@
 Was enthält der Atomkern?#atombau>Protonen|Neutronen||Elektronen
 Wie viele Elektronen kann die erste Elektronenschale enthalten?#atombau>2||4|6|8|10
 Wie viele Elektronen kann die zweite Elektronenschale enthalten?#atombau>8||2|4|6|10
-Wie viele Elektronen enthält ein Wasserstoff-Atom?#atombau>1||2|4|8|10
-Wie viele Elektronen enthält ein Kohlenstoff-Atom?#atombau>6||2|4|8|10
-Wie viele Elektronen enthält ein Sauerstoff-Atom?#atombau>8||2|4|6|10
+Wie viele Elektronen enthält ein Wasserstoff-Atom insgesamt?#atombau>1||2|4|8|10
+Wie viele Elektronen enthält ein Kohlenstoff-Atom insgesamt?#atombau>6||2|4|8|10
+Wie viele Elektronen enthält ein Sauerstoff-Atom insgesamt?#atombau>8||2|4|6|10
 Was wird durch die Anzahl der Protonen im Atomkern bestimmt?#atombau>das Element||das Isotop||das Ion
 Was wird durch die Anzahl der Neutronen im Atomkern bestimmt?#atombau>das Isotop||das Element||das Ion
 Wie viele Elektronen Schalen hat ein Kohlenstoff-Atom?#atombau>2||1|3
