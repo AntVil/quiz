@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>quiz</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <header><label for="navToggle">≡</label><h1>quiz</h1></header>
+        
+        <input id="navToggle" type="checkbox">
+        <nav>
+            <label onclick="this.parentElement.previousElementSibling.checked = false;loadRandomQuestion()" for="randomQuestionsScreen">Zufällige Fragen</label>
+            <label onclick="this.parentElement.previousElementSibling.checked = false" for="allQuestionsScreen">Alle Fragen</label>
+            <label onclick="this.parentElement.previousElementSibling.checked = false" for="statisticScreen">Statistik</label>
+        </nav>
+        
+        <main>
+            <input id="randomQuestionsScreen" name="screenSelection" type="radio" checked>
+            <section>
+                <p id="question"></p>
+                <form id="questionForm" onsubmit="return false"></form>
+                <p id="questionLabel"></p>
+            </section>
+
+            <input id="allQuestionsScreen" name="screenSelection" type="radio">
+            <section></section>
+
+            <input id="statisticScreen" name="screenSelection" type="radio">
+            <section>
+                <canvas width="500" height="500"></canvas>
+            </section>
+        </main>
+    </body>
+</html>

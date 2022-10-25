@@ -1,0 +1,69 @@
+Was enthält der Atomkern?#atombau>Protonen|Neutronen||Elektronen
+Wie viele Elektronen kann die erste Elektronenschale enthalten?#atombau>2||4|6|8|10
+Wie viele Elektronen kann die zweite Elektronenschale enthalten?#atombau>8||2|4|6|10
+Wie viele Elektronen enthält ein Wasserstoff-Atom?#atombau>6||2|4|8|10
+Wie viele Elektronen enthält ein Kohlenstoff-Atom?#atombau>6||2|4|8|10
+Wie viele Elektronen enthält ein Sauerstoff-Atom?#atombau>6||2|4|8|10
+Was wird durch die Anzahl der Protonen im Atomkern bestimmt?#atombau>das Element||das Isotop||das Ion
+Was wird durch die Anzahl der Neutronen im Atomkern bestimmt?#atombau>das Isotop||das Element||das Ion
+Wie viele Elektronen Schalen hat ein Kohlenstoff-Atom?#atombau>2||1|3
+Wie viele Elektronen Schalen hat ein Wasserstoff-Atom?#atombau>1||2|3
+Wie viele Elektronen Schalen hat ein Helium-Atom?#atombau>1||2|3
+Was wird durch die Elektronegativität eines Atoms bestimmt?#periodensystem>die Elektronen-anziehung||die Ladung
+Welches Element hat die größte Elektronegativität?#periodensystem>Fluor||Gold|Stickstoff|Sauerstoff|Wasserstoff|Kohlenstoff|Helium
+Welches ist eine Hauptgruppe?#periodensystem>Alkalimetall|Erdalkalimetalle||Metall|nicht-Metall|Halb-Metall
+Was ist keine Hauptgruppe?#periodensystem>Lanthanoide|Actinoide||Halogene|Alkalimetalle|Erdalkalimetalle|Edelgase
+Wie reagieren Halogene meistens?#periodensystem>schnell & stark||träge & sanft|schnell & sanft|träge & stark|gar nicht
+Wie reagieren Alkalimetalle meistens?#periodensystem>schnell & stark||träge & sanft|schnell & sanft|träge & stark|gar nicht
+Wie reagieren Edelgase meistens?#periodensystem>gar nicht||träge & sanft|schnell & sanft|träge & stark|schnell & stark
+Wo befinden sich Edelmetalle im Periodensystem?#periodensystem>mittig||links|rechts
+Wie lautet die chemische Formel von elementarem Wasserstoff?#periodensystem>H₂||²H|2H|H⁺|H₂O
+Wie lautet die chemische Formel von elementarem Chlor?#periodensystem>Cl₂||²Cl|2Cl|Cl⁻|H₂O
+Wie lautet die chemische Formel von elementarem Stickstoff?#periodensystem>N₂||²N|2N|N⁺
+Wie lautet die chemische Formel von elementarem Sauerstoff?#periodensystem>O₂||²O|2O|O⁺
+Wie lautet die chemische Formel von elementarem Natirum?#periodensystem>Na||Na⁺|NaCl
+Wie lautet die chemische Formel von elementarem Kohlenstoff?#periodensystem>C||CO₂|CH₄
+Was ist Natriumchlorid?#bindung>Salz||Element|Metall|Edelgas|Molekül|Atom
+Was ist Ammoniumcarbonat?#bindung>Salz||Element|Metall|Edelgas|Molekül|Atom
+Wie viele Bindungen geht Kohlenstoff normalerweise ein?#bindung>4||keine|1|2|3|5|6
+Wie viele Bindungen geht Sauerstoff normalerweise ein?#bindung>2||keine|1|3|4|5|6
+Was gibt die Summenformel an?#bindung>enthaltene Atome||Molekül Struktur
+Welchem Molekül entsprich die chemische Formel CH₄?#organisch>Methan||Ethan|Ethen|Ethin|Kohlenstoffdioxid
+Welchem Molekül entsprich die chemische Formel C₂H₆?#organisch>Ethan||Methan|Ethen|Ethin|Kohlenstoffdioxid
+Welchem Molekül entsprich die chemische Formel C₂H₄?#organisch>Ethen||Methan|Ethan|Ethin|Kohlenstoffdioxid
+Woraus bestehen Alkane?#organisch>Wasserstoff|Kohlenstoff||Sauerstoff|Stickstoff|Aluminium|Doppelbindungen
+Wovon haben Alkene weniger als Alkane?#organisch>Wasserstoff||Sauerstoff|Elektronen
+Welche Eigenschaft besitzen Alkene und Alkine?#organisch>ungesättigt||gesättigt|wasserlöslich|lipophob
+Was ist kein Alkohol?#organisch>Benzol||Methanol|Ethanol|Propanol|Butanol|Pentanol|Hexanol
+Was entsteht bei der Neutralisation?#säurebase>Wasser|Salz||Metall|Zucker
+Wie ist der pH-Wert definiert?#säurebase>-log(C(H₃O⁺))||-log(C(OH⁻))|log(C(H₃O⁺))|log(C(OH⁻))
+Wie ist der pOH-Wert definiert?#säurebase>-log(C(OH⁻))||-log(C(H₃O⁺))|log(C(H₃O⁺))|log(C(OH⁻))
+Wie lautet die chemische Formel des Oxoniumion?#säurebase>H₃O⁺||OH⁻|H₂O|H₂|O₂|O₃|Cl⁻|Na⁺
+Welcher Stoff ist gut in Wasser löslich?#bindung>Glucose|Ethanol|Natriumchlorid||Öl|Propan|Butan|Pentan|Hexan
+Was ist H⁺?#periodensystem>Proton||Elementarer Wasserstoff|Wasser|Wasserstoff Isotop
+Wie reagieren Säuren?#säurebase>Protonenabgabe||Protonenaufnahme|Elektronenabgabe|Elektronenaufnahme
+Wie reagieren Basen?#säurebase>Protonenaufnahme||Protonenabgabe|Elektronenabgabe|Elektronenaufnahme
+Was findet bei einer Oxidation statt?#redoxreaktion>Elektronenabgabe||Protonenaufnahme||Protonenabgabe|Elektronenaufnahme
+Was findet bei einer Reduktion statt?#redoxreaktion>Elektronenaufnahme||Protonenaufnahme||Protonenabgabe|Elektronenabgabe
+Welcher Stoff wurde am stärksten oxidiert?#redoxreaktion>Kohlenstoffdioxid||Methan||Methanol|Methansäure(Ameisensäure)|Methanal(Formaldehyd)
+Wofür werden funktionelle Gruppe verwendet?#organisch>Stoffeigenschaften|typische Reaktionsarten||Es gibt keinen nutzen
+Was ist keine funktionelle Gruppe?#organisch>Methan|Ethan||Alkohol|Aldehyd|Ester|Ether|Keton|Epoxid
+Welche Eigenschaften besitzen Alkohole?#organisch>wasserlöslich|bilden Wasserstoffbrücken||hygroskopisch|
+Welche Eigenschaften besitzen Aldehyde?#organisch>bilden Dipol-Dipol-Wechselwirkungen|reagiert als reduktionsmittel||hygroskopisch
+Welche Eigenschaften besitzen Ketone?#organisch>bilden Dipol-Dipol-Wechselwirkungen||reagiert als reduktionsmittel|hygroskopisch
+Welche Sekundärbindung ist am stärksten?#bindung>Wasserstoffbrücken||Dipol-Dipol-Wechselwirkungen|Van-der-Waals-Kräfte
+Welche Sekundärbindung ist am schwächsten?#bindung>Van-der-Waals-Kräfte||Dipol-Dipol-Wechselwirkungen|Wasserstoffbrücken
+Die Konzentration von Oxoniumionen (H₃O⁺) in einer Lösung ist hoch. Welche Eigenschaft hat die Lösung?#säurebase>sauer||basisch|neutral|hygroskopisch|hydrophob
+Wie werden zwei Molekül mit gleichen Atome, aber unterschiedlichem Aufbau genannt?#organisch>Isomere||Isotope|Ioslatoren
+Wie lautet ein Isomer von n-Propan?#organisch>Es gibt keine||
+Wie lautet ein Isomer von n-Butan?#organisch>2-Methylpropan||1-Methylpropan|3-Methylpropan|2-Methylbutan|3-Methylbutan
+Wie lautet ein Isomer von n-Pentan?#organisch>2-Methylbutan|2,2-Dimethylpropan||2-Methylpentan|3-Methylbutan|3,3-Dimethylpropan
+Welche Eigenschaft macht einen Stoff hydrophil?#periodensystem>polar||unpolar|flüssig|neutral
+Was ist kein Polymer?#organisch>Wasser|Glucose|Kohlenstoffdioxid||Cellulose|Polyethylen|Stärke|Teflon|Polyester
+Welcher Stoff ist neutral geladen?#periodensystem>CH₄|CO₂|H₂O||H₃O|OH|NH₄|C₂H₃O (Acetat)
+Wie lautet die Gleichung für die Masse?#reaktion>n·M=m||n:M=m|M:n=m|m·M=n
+Welche Bindung entsteht, wenn der Unterschied der Elektronegativitäten zwischen zwei Atomen niedrig ist?#bindung>unpolare Atombindung||polare Atombindung|Ionenbindung
+Wann ist eine Atombindung polar?#bindung>großer Unterschied der Elektronegativitäten||kleiner Unterschied der Elektronegativitäten
+Was ist ein Katalysator?#reaktion>beschleunigt eine Reaktion||eine Maschine|ein Emulgator
+Wie lautet die chemische Reaktion zwischen Wasserstoff und Sauerstoff?#reaktion>2H₂+O₂→2H₂O||H₂+O₂→H₂O|2H₂+O₂→H₂O|H₂+O₂→2H₂O|2H₂+2O₂→2H₂O
+Was ist keine Dispersion?#gemisch>gasförmig-in-gasförmig||fest-in-fest|fest-in-flüssig|fest-in-gasförmig|flüssig-in-fest|flüssig-in-flüssig|flüssig-in-gasförmig|gasförmig-in-fest|gasförmig-in-flüssig
