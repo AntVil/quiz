@@ -1,9 +1,9 @@
 Was enthält der Atomkern?#atombau>Protonen|Neutronen||Elektronen
 Wie viele Elektronen kann die erste Elektronenschale enthalten?#atombau>2||4|6|8|10
 Wie viele Elektronen kann die zweite Elektronenschale enthalten?#atombau>8||2|4|6|10
-Wie viele Elektronen enthält ein Wasserstoff-Atom?#atombau>6||2|4|8|10
+Wie viele Elektronen enthält ein Wasserstoff-Atom?#atombau>1||2|4|8|10
 Wie viele Elektronen enthält ein Kohlenstoff-Atom?#atombau>6||2|4|8|10
-Wie viele Elektronen enthält ein Sauerstoff-Atom?#atombau>6||2|4|8|10
+Wie viele Elektronen enthält ein Sauerstoff-Atom?#atombau>8||2|4|6|10
 Was wird durch die Anzahl der Protonen im Atomkern bestimmt?#atombau>das Element||das Isotop||das Ion
 Was wird durch die Anzahl der Neutronen im Atomkern bestimmt?#atombau>das Isotop||das Element||das Ion
 Wie viele Elektronen Schalen hat ein Kohlenstoff-Atom?#atombau>2||1|3
@@ -91,11 +91,11 @@ Wie sind Anionen geladen?#atombau>negativ||positiv|neutral
 Wie sind Kationen geladen?#atombau>positiv||negativ|neutral
 Was ist Magnesiumcarbonat?#bindung>Salz||Element|Metall|Edelgas|Molekül|Atom
 Was ist Calciumnitrat?#bindung>Salz||Element|Metall|Edelgas|Molekül|Atom
-Welche Namens-Endung haben Salze die Cl enthalten?#bindung>chlorid||sulfit|sulfat|nitrat|phosphat|carbonat
-Welche Namens-Endung haben Salze die SO₃ enthalten?#bindung>sulfit||chlorid|sulfat|nitrat|phosphat|carbonat
-Welche Namens-Endung haben Salze die SO₄ enthalten?#bindung>sulfat||chlorid|sulfit|nitrat|phosphat|carbonat
-Welche Namens-Endung haben Salze die NO₃ enthalten?#bindung>nitrat||chlorid|sulfit|sulfat|phosphat|carbonat
-Welche Namens-Endung haben Salze die PO₄ enthalten?#bindung>phosphat||chlorid|sulfit|sulfat|nitrat|carbonat
-Welche Namens-Endung haben Salze die CO₃ enthalten?#bindung>carbonat||chlorid|sulfit|sulfat|nitrat|phosphat
+Welche Namens-Endung haben Salze die Cl⁻ enthalten?#bindung>chlorid||sulfit|sulfat|nitrat|phosphat|carbonat
+Welche Namens-Endung haben Salze die SO₃²⁻ enthalten?#bindung>sulfit||chlorid|sulfat|nitrat|phosphat|carbonat
+Welche Namens-Endung haben Salze die SO₄²⁻ enthalten?#bindung>sulfat||chlorid|sulfit|nitrat|phosphat|carbonat
+Welche Namens-Endung haben Salze die NO₃⁻ enthalten?#bindung>nitrat||chlorid|sulfit|sulfat|phosphat|carbonat
+Welche Namens-Endung haben Salze die PO₄³⁻ enthalten?#bindung>phosphat||chlorid|sulfit|sulfat|nitrat|carbonat
+Welche Namens-Endung haben Salze die CO₃²⁻ enthalten?#bindung>carbonat||chlorid|sulfit|sulfat|nitrat|phosphat
 Was entsteht bei der Reaktion zwischen zwei Alkoholen#organisch>Ether||Ester|Ethan
 Was entsteht bei der Reaktion zwischen einem Alkohol und einer Karbonsäure#organisch>Ester||Ether|Ethan
