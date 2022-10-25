@@ -47,7 +47,7 @@ Was findet bei einer Oxidation statt?#redoxreaktion>Elektronenabgabe||Protonenau
 Was findet bei einer Reduktion statt?#redoxreaktion>Elektronenaufnahme||Protonenaufnahme||Protonenabgabe|Elektronenabgabe
 Welcher Stoff wurde am stärksten oxidiert?#redoxreaktion>Kohlenstoffdioxid||Methan||Methanol|Methansäure(Ameisensäure)|Methanal(Formaldehyd)
 Wofür werden funktionelle Gruppe verwendet?#organisch>Stoffeigenschaften|typische Reaktionsarten||Es gibt keinen nutzen
-Was ist keine funktionelle Gruppe?#organisch>Methan|Ethan||Alkohol|Aldehyd|Ester|Ether|Keton|Epoxid
+Was ist keine funktionelle Gruppe?#organisch>Methan|Ethan||Alkohol|Aldehyd|Ester|Ether|Keton|Epoxid|Amino
 Welche Eigenschaften besitzen Alkohole?#organisch>wasserlöslich|bilden Wasserstoffbrücken||hygroskopisch|
 Welche Eigenschaften besitzen Aldehyde?#organisch>bilden Dipol-Dipol-Wechselwirkungen|reagiert als reduktionsmittel||hygroskopisch
 Welche Eigenschaften besitzen Ketone?#organisch>bilden Dipol-Dipol-Wechselwirkungen||reagiert als reduktionsmittel|hygroskopisch
@@ -67,3 +67,35 @@ Wann ist eine Atombindung polar?#bindung>großer Unterschied der Elektronegativi
 Was ist ein Katalysator?#reaktion>beschleunigt eine Reaktion||eine Maschine|ein Emulgator
 Wie lautet die chemische Reaktion zwischen Wasserstoff und Sauerstoff?#reaktion>2H₂+O₂→2H₂O||H₂+O₂→H₂O|2H₂+O₂→H₂O|H₂+O₂→2H₂O|2H₂+2O₂→2H₂O
 Was ist keine Dispersion?#gemisch>gasförmig-in-gasförmig||fest-in-fest|fest-in-flüssig|fest-in-gasförmig|flüssig-in-fest|flüssig-in-flüssig|flüssig-in-gasförmig|gasförmig-in-fest|gasförmig-in-flüssig
+Welche Art von Dispersion ist fest-in-fest?#gemisch>Gefüge||Suspension|Aerosol|fester Schaum (porös)|Emulsion|Schaum
+Welche Art von Dispersion ist fest-in-flüssig?#gemisch>Suspension||Gefüge|Aerosol|fester Schaum (porös)|Emulsion|Schaum
+Welche Art von Dispersion ist fest-in-gasförmig?#gemisch>Aerosol||Gefüge|Suspension|fester Schaum (porös)|Emulsion|Schaum
+Welche Art von Dispersion ist flüssig-in-fest?#gemisch>fester Schaum (porös)||Gefüge|Suspension|Aerosol|Emulsion|Schaum
+Welche Art von Dispersion ist flüssig-in-flüssig?#gemisch>Emulsion||Gefüge|Suspension|Aerosol|fester Schaum (porös)|Schaum
+Welche Art von Dispersion ist flüssig-in-gasförmig?#gemisch>Aerosol||Gefüge|Suspension|fester Schaum (porös)|Emulsion|Schaum
+Welche Art von Dispersion ist gasförmig-in-fest?#gemisch>fester Schaum (porös)||Gefüge|Suspension|Aerosol|Emulsion|Schaum
+Welche Art von Dispersion ist gasförmig-in-flüssig?#gemisch>Schaum||Gefüge|Suspension|Aerosol|fester Schaum (porös)|Emulsion
+Was geschieht, wenn ein Atom zu viele oder zu wenige Neutronen hat?#atombau>Es ist instabil|Es ist radioaktiv||Es reagiert schlechter|Es reagiert besser
+Wie lautet die Reaktion zur Herstellung von Methan?#reaktion>C+2H₂→CH₄||C+H₂→CH₄|C+2H₂→2CH₄|C+4H→CH₄
+Wie lautet die Reaktion zur Herstellung von Ethan?#reaktion>2C+3H₂→C₂H6||C₂+3H₂→C₂H₆|C₂+H₆→C₂H₆|2C+6H→C₂H₆
+Wie lautet die Reaktion der Autoprotolyse des Wassers?#säurebase>2H₂O→H₃O⁺+OH⁻||2H₂O→H₃O+OH|H₂O→H₃O⁺+OH⁻
+Welche Elektronegativität besitzt Fluor?#periodensystem>4||1|2|3|5
+Welche Kraft wirkt zwischen gleichen Teilchen?#bindung>Kohäsion||Adhäsion
+Welche Kraft wirkt zwischen unterschiedlichen Teilchen?#bindung>Adhäsion||Kohäsion
+Wie nennt man ein Gemisch in dem zwei Phasen sichtbar sind?#gemisch>heterogen||homogen
+Wie nennt man ein Gemisch in dem nur eine Phasen sichtbar ist?#gemisch>homogen||heterogen
+Wie wird eine chemische Reaktion genannt die Energie freisetzt?#reaktion>exotherm||endotherm
+Wie lautet die Gleichung für die Konzentration?#reaktion>n:V=C||n·V=C|V:n=C|n=V:C
+Wie lautet die Gleichung für die Dichte?#reaktion>m:V=ρ||m·V=ρ|V:m=ρ|m=V:ρ
+Wie sind Anionen geladen?#atombau>negativ||positiv|neutral
+Wie sind Kationen geladen?#atombau>positiv||negativ|neutral
+Was ist Magnesiumcarbonat?#bindung>Salz||Element|Metall|Edelgas|Molekül|Atom
+Was ist Calciumnitrat?#bindung>Salz||Element|Metall|Edelgas|Molekül|Atom
+Welche Namens-Endung haben Salze die Cl enthalten?#bindung>chlorid||sulfit|sulfat|nitrat|phosphat|carbonat
+Welche Namens-Endung haben Salze die SO₃ enthalten?#bindung>sulfit||chlorid|sulfat|nitrat|phosphat|carbonat
+Welche Namens-Endung haben Salze die SO₄ enthalten?#bindung>sulfat||chlorid|sulfit|nitrat|phosphat|carbonat
+Welche Namens-Endung haben Salze die NO₃ enthalten?#bindung>nitrat||chlorid|sulfit|sulfat|phosphat|carbonat
+Welche Namens-Endung haben Salze die PO₄ enthalten?#bindung>phosphat||chlorid|sulfit|sulfat|nitrat|carbonat
+Welche Namens-Endung haben Salze die CO₃ enthalten?#bindung>carbonat||chlorid|sulfit|sulfat|nitrat|phosphat
+Was entsteht bei der Reaktion zwischen zwei Alkoholen#organisch>Ether||Ester|Ethan
+Was entsteht bei der Reaktion zwischen einem Alkohol und einer Karbonsäure#organisch>Ester||Ether|Ethan
