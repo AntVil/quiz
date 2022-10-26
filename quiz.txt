@@ -48,14 +48,14 @@ Was findet bei einer Reduktion statt?#redoxreaktion>Elektronenaufnahme||Protonen
 Welcher Stoff wurde am stärksten oxidiert?#redoxreaktion>Kohlenstoffdioxid||Methan||Methanol|Methansäure(Ameisensäure)|Methanal(Formaldehyd)
 Wofür werden funktionelle Gruppe verwendet?#organisch>Stoffeigenschaften|typische Reaktionsarten||Es gibt keinen nutzen
 Was ist keine funktionelle Gruppe?#organisch>Methan|Ethan||Alkohol|Aldehyd|Ester|Ether|Keton|Epoxid|Amino
-Welche Eigenschaften besitzen Alkohole?#organisch>wasserlöslich|bilden Wasserstoffbrücken||hygroskopisch|
-Welche Eigenschaften besitzen Aldehyde?#organisch>bilden Dipol-Dipol-Wechselwirkungen|reagiert als reduktionsmittel||hygroskopisch
-Welche Eigenschaften besitzen Ketone?#organisch>bilden Dipol-Dipol-Wechselwirkungen||reagiert als reduktionsmittel|hygroskopisch
+Welche Eigenschaften besitzen Alkohole?#organisch>wasserlöslich|bilden Wasserstoffbrücken||hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
+Welche Eigenschaften besitzen Aldehyde?#organisch>bilden Dipol-Dipol-Wechselwirkungen|reagiert als reduktionsmittel||hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
+Welche Eigenschaften besitzen Ketone?#organisch>bilden Dipol-Dipol-Wechselwirkungen||reagiert als reduktionsmittel|hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
 Welche Sekundärbindung ist am stärksten?#bindung>Wasserstoffbrücken||Dipol-Dipol-Wechselwirkungen|Van-der-Waals-Kräfte
 Welche Sekundärbindung ist am schwächsten?#bindung>Van-der-Waals-Kräfte||Dipol-Dipol-Wechselwirkungen|Wasserstoffbrücken
 Die Konzentration von Oxoniumionen (H₃O⁺) in einer Lösung ist hoch. Welche Eigenschaft hat die Lösung?#säurebase>sauer||basisch|neutral|hygroskopisch|hydrophob
 Wie werden zwei Molekül mit gleichen Atome, aber unterschiedlichem Aufbau genannt?#organisch>Isomere||Isotope|Ioslatoren
-Wie lautet ein Isomer von n-Propan?#organisch>Es gibt keine||
+Wie lautet ein Isomer von n-Propan?#organisch>Es gibt keine||Methan|Ethan|1-Methylpropan
 Wie lautet ein Isomer von n-Butan?#organisch>2-Methylpropan||1-Methylpropan|3-Methylpropan|2-Methylbutan|3-Methylbutan
 Wie lautet ein Isomer von n-Pentan?#organisch>2-Methylbutan|2,2-Dimethylpropan||2-Methylpentan|3-Methylbutan|3,3-Dimethylpropan
 Welche Eigenschaft macht einen Stoff hydrophil?#periodensystem>polar||unpolar|flüssig|neutral
