@@ -2,13 +2,15 @@ let quiz;
 let statistic;
 
 const STATISTICS_MAX_COUNT = 2;
-const STATISTICS_COLORS = ['#999', '#FE4', '#0F0'];
+const STATISTICS_COLORS = ["#A00", "#F33", "#999", "#3F3", "#0A0"];
 
 window.onload = async function(){
+    if("serviceWorker" in navigator){
+        navigator.serviceWorker.register("./sw.js");
+    }
+
     await loadQuestionList();
-
     loadRandomQuestion();
-
     loadStatistic();
 }
 
@@ -17,10 +19,15 @@ function loadRandomQuestion(){
 }
 
 async function loadQuestionList(){
-    quiz = (
-        await (await fetch("quiz.txt")).text()
-    ).split("\n").map(s => s.trim()).filter(s => s.length > 0);
+    try{
+        quiz = await (await fetch("quiz.txt")).text();
+        localStorage.setItem("quizQuestions", quiz);
+    }catch{
+        quiz = localStorage.getItem("quizQuestions");
+    }
 
+    quiz = quiz.split("\n").map(s => s.trim()).filter(s => s.length > 0);
+    
     let categories = {};
 
     let head, foot, question, label;
@@ -83,7 +90,6 @@ function shuffle(arr){
 
 function createOptionElement(index, option, isCorrect, onQuestionCompleted){
     let optionElement = document.createElement("button");
-
     optionElement.innerText = option;
 
     if(isCorrect){
@@ -125,7 +131,6 @@ function loadQuestion(index, onQuestionCompleted){
     let rightOptions = options.slice(0, sepIndex);
     let wrongOptions = options.slice(sepIndex+1, options.length);
 
-
     let optionElements = [
         createOptionElement(index, rightOptions[getRandom(rightOptions.length)], true, onQuestionCompleted)
     ];
@@ -157,13 +162,15 @@ function loadStatistic(){
     }
     
     for(let i=statistic.length;i<quiz.length;i++){
-        statistic.push(0);
+        statistic.push(STATISTICS_MAX_COUNT);
     }
 
     for(let i=0;i<statistic.length;i++){
         let children = document.getElementById(`question${i}`).children;
-        for(let j=0;j<statistic[i];j++){
-            children[j].style.backgroundColor = "#0F0"
+        let diff = statistic[i] - STATISTICS_MAX_COUNT;
+        let color = (diff > 0) ? "#0F0" : "#F00";
+        for(let j=0;j<Math.abs(diff);j++){
+            children[j].style.backgroundColor = color;
         }
     }
 
@@ -172,25 +179,21 @@ function loadStatistic(){
 
 function updateStatistic(index, isCorrect){
     if(isCorrect){
-        statistic[index] = Math.min(statistic[index] + 1, STATISTICS_MAX_COUNT);
+        statistic[index] = Math.min(statistic[index] + 1, 2 * STATISTICS_MAX_COUNT);
     }else{
-        statistic[index] = 0;
+        statistic[index] = Math.max(Math.min(statistic[index] - 1, STATISTICS_MAX_COUNT - 1), 0);
     }
     saveStatistic();
     
     let children = document.getElementById(`question${index}`).children;
-    
-    if(statistic[index] > 0){
-        if(statistic[index] > 1){
-            children[0].style.backgroundColor = "#0F0";
-            children[1].style.backgroundColor = "#0F0";
-        }else{
-            children[0].style.backgroundColor = "#0F0";
-            children[1].style.backgroundColor = "";
-        }
-    }else{
-        children[0].style.backgroundColor = "";
-        children[1].style.backgroundColor = "";
+
+    let diff = statistic[index] - STATISTICS_MAX_COUNT;
+    let color = (diff > 0) ? "#0F0" : "#F00";
+    for(let i=0;i<Math.abs(diff);i++){
+        children[i].style.backgroundColor = color;
+    }
+    for(let i=Math.abs(diff);i<STATISTICS_MAX_COUNT;i++){
+        children[i].style.backgroundColor = "";
     }
 }
 
@@ -201,20 +204,20 @@ function saveStatistic(){
     let ctxt = canvas.getContext("2d");
     ctxt.clearRect(0, 0, canvas.width, canvas.height);
 
-    for(let i=0;i<=STATISTICS_MAX_COUNT;i++){
+    for(let i=0;i<=2 * STATISTICS_MAX_COUNT;i++){
         let count = 0;
         for(let x of statistic){
             if(x >= i){
                 count ++;
             }
         }
-        console.log(i)
+        
         let percent = count / statistic.length;
 
         ctxt.fillStyle = STATISTICS_COLORS[i];
         ctxt.beginPath();
         ctxt.moveTo(canvas.width / 2, canvas.height / 2);
-        ctxt.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, -Math.PI / 2, -Math.PI / 2 + percent * 2 * Math.PI);
+        ctxt.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 + i, -Math.PI / 2, -Math.PI / 2 + percent * 2 * Math.PI);
         ctxt.fill();
     }
 }
