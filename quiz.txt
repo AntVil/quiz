@@ -77,7 +77,7 @@ Welche Art von Dispersion ist gasförmig-in-fest?#gemisch>fester Schaum (porös)
 Welche Art von Dispersion ist gasförmig-in-flüssig?#gemisch>Schaum||Gefüge|Suspension|Aerosol|fester Schaum (porös)|Emulsion
 Was geschieht, wenn ein Atom zu viele oder zu wenige Neutronen hat?#atombau>Es ist instabil|Es ist radioaktiv||Es reagiert schlechter|Es reagiert besser
 Wie lautet die Reaktion zur Herstellung von Methan?#reaktion>C+2H₂→CH₄||C+H₂→CH₄|C+2H₂→2CH₄|C+4H→CH₄
-Wie lautet die Reaktion zur Herstellung von Ethan?#reaktion>2C+3H₂→C₂H6||C₂+3H₂→C₂H₆|C₂+H₆→C₂H₆|2C+6H→C₂H₆
+Wie lautet die Reaktion zur Herstellung von Ethan?#reaktion>2C+3H₂→C₂H₆||C₂+3H₂→C₂H₆|C₂+H₆→C₂H₆|2C+6H→C₂H₆
 Wie lautet die Reaktion der Autoprotolyse des Wassers?#säurebase>2H₂O→H₃O⁺+OH⁻||2H₂O→H₃O+OH|H₂O→H₃O⁺+OH⁻
 Welche Elektronegativität besitzt Fluor?#periodensystem>4||1|2|3|5
 Welche Kraft wirkt zwischen gleichen Teilchen?#bindung>Kohäsion||Adhäsion
