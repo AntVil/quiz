@@ -15,7 +15,18 @@ window.onload = async function(){
 }
 
 function loadRandomQuestion(){
-    loadQuestion(getRandom(quiz.length), loadRandomQuestion);
+    loadQuestion(getRandom(quiz.length), loadRandomQuestion, {});
+}
+
+function loadCategoryQuestion({questions, finish}){
+    console.log(questions)
+    if(questions.length > 0){
+        let index = questions.splice(getRandom(questions.length), 1);
+        console.log(index)
+        loadQuestion(index, loadCategoryQuestion, {questions: questions, finish: finish});
+    }else{
+        finish();
+    }
 }
 
 async function loadQuestionList(){
@@ -37,6 +48,7 @@ async function loadQuestionList(){
 
         if(label === null || label === undefined || label === ""){
             label = "andere";
+            quiz[i] = quiz[i].replace(/#[^>]*>|>/, `#${label}>`)
         }
         
         if(label in categories){
@@ -46,19 +58,47 @@ async function loadQuestionList(){
         }
     }
 
-    let allQuestionsElement = document.getElementById("allQuestionsScreen").nextElementSibling;
+    let allQuestionsElement = document.getElementById("listScreen").nextElementSibling;
     
     for(let category of Object.keys(categories)){
-        let header = document.createElement("h3");
-        header.innerText = category;
+        // toggle
+        let categoryToggle = document.createElement("input");
+        categoryToggle.type = "checkbox";
+        categoryToggle.id = `${category}CategoryToggle`;
+        allQuestionsElement.appendChild(categoryToggle);
+
+        // header
+        let header = document.createElement("label");
+        header.setAttribute("for", `${category}CategoryToggle`);
+        let headerTitle = document.createElement("h3");
+        headerTitle.innerText = category;
+
+        let categoryButton = document.createElement("button");
+        console.log(categories[category])
+        console.log(categories[category].map((_, i) => i))
+        categoryButton.onclick = () => {
+            document.getElementById("questionScreen").checked = true;
+            loadCategoryQuestion({
+                "questions": categories[category].map(([_, i]) => i),
+                "finish": () => {
+                    document.getElementById("listScreen").checked = true;
+                }
+            })
+        }
+
+        header.appendChild(headerTitle);
+        header.appendChild(categoryButton);
         allQuestionsElement.appendChild(header);
+
+        // content
+        let categoryContent = document.createElement("div");
         for(let [question, index] of categories[category]){
             let item = document.createElement("button");
             item.id = `question${index}`;
             item.onclick = () => {
-                document.getElementById("randomQuestionsScreen").checked = true;
+                document.getElementById("questionScreen").checked = true;
                 loadQuestion(index, () => {
-                    document.getElementById("allQuestionsScreen").checked = true;
+                    document.getElementById("listScreen").checked = true;
                 });
             }
             let text = document.createElement("span");
@@ -68,8 +108,12 @@ async function loadQuestionList(){
             }
             item.appendChild(text);
             
-            allQuestionsElement.appendChild(item);
+            categoryContent.appendChild(item);
         }
+        let gapSize = parseInt(getComputedStyle(document.body).getPropertyValue("--gap-size").split("px")[0]);
+        let itemHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--list-item-height").split("px")[0]);
+        categoryContent.style.height = `${itemHeight * categories[category].length + gapSize * Math.max(categories[category].length - 1, 0)}px`;
+        allQuestionsElement.appendChild(categoryContent);
     }
 }
 
@@ -88,7 +132,7 @@ function shuffle(arr){
     return arr;
 }
 
-function createOptionElement(index, option, isCorrect, onQuestionCompleted){
+function createOptionElement(index, option, isCorrect, onQuestionCompleted, onQuestionCompletedParams){
     let optionElement = document.createElement("button");
     optionElement.innerText = option;
 
@@ -110,7 +154,7 @@ function createOptionElement(index, option, isCorrect, onQuestionCompleted){
         for(let option of questionForm.children){
             option.onclick = () => {
                 questionForm.classList.remove("optionChosen");
-                onQuestionCompleted();
+                onQuestionCompleted(onQuestionCompletedParams);
             }
         }
     }
@@ -118,7 +162,7 @@ function createOptionElement(index, option, isCorrect, onQuestionCompleted){
     return optionElement;
 }
 
-function loadQuestion(index, onQuestionCompleted){
+function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     let [head, foot] = quiz[index].split(">");
     let [question, label] = head.split("#");
 
@@ -132,11 +176,11 @@ function loadQuestion(index, onQuestionCompleted){
     let wrongOptions = options.slice(sepIndex+1, options.length);
 
     let optionElements = [
-        createOptionElement(index, rightOptions[getRandom(rightOptions.length)], true, onQuestionCompleted)
+        createOptionElement(index, rightOptions[getRandom(rightOptions.length)], true, onQuestionCompleted, onQuestionCompletedParams)
     ];
     while(optionElements.length < 4 && wrongOptions.length > 0){
         optionElements.push(
-            createOptionElement(index, wrongOptions.splice(getRandom(wrongOptions.length), 1), false, onQuestionCompleted)
+            createOptionElement(index, wrongOptions.splice(getRandom(wrongOptions.length), 1), false, onQuestionCompleted, onQuestionCompletedParams)
         )
     }
 
@@ -220,4 +264,15 @@ function saveStatistic(){
         ctxt.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 + i, -Math.PI / 2, -Math.PI / 2 + percent * 2 * Math.PI);
         ctxt.fill();
     }
+}
+
+function navitageToLabel(label){
+    for(let child of document.getElementById("listScreen").nextElementSibling.children){
+        if(child.type === "checkbox" || child.type === "radio"){
+            child.checked = false;
+        }
+    }
+    let toggle = document.getElementById(`${label}CategoryToggle`);
+    toggle.checked = true;
+    setTimeout(() => toggle.nextElementSibling.scrollIntoView(), 100);
 }

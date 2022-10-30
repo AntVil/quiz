@@ -20,20 +20,20 @@
         
         <input id="navToggle" type="checkbox">
         <nav>
-            <label onclick="this.parentElement.previousElementSibling.checked = false;loadRandomQuestion()" for="randomQuestionsScreen">Zufällige Fragen</label>
-            <label onclick="this.parentElement.previousElementSibling.checked = false" for="allQuestionsScreen">Alle Fragen</label>
+            <label onclick="this.parentElement.previousElementSibling.checked = false;loadRandomQuestion()" for="questionScreen">Zufällige Fragen</label>
+            <label onclick="this.parentElement.previousElementSibling.checked = false" for="listScreen">Alle Fragen</label>
             <label onclick="this.parentElement.previousElementSibling.checked = false" for="statisticScreen">Statistik</label>
         </nav>
-        
+
         <main>
-            <input id="randomQuestionsScreen" name="screenSelection" type="radio" checked>
+            <input id="questionScreen" name="screenSelection" type="radio">
             <section>
                 <p id="question"></p>
                 <form id="questionForm" onsubmit="return false"></form>
-                <p id="questionLabel"></p>
+                <label id="questionLabel" for="listScreen" onclick="navitageToLabel(this.innerText)"></label>
             </section>
 
-            <input id="allQuestionsScreen" name="screenSelection" type="radio">
+            <input id="listScreen" name="screenSelection" type="radio" checked>
             <section></section>
 
             <input id="statisticScreen" name="screenSelection" type="radio">
