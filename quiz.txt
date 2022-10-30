@@ -4,8 +4,8 @@ Wie viele Elektronen kann die zweite Elektronenschale enthalten?#atombau>8||2|4|
 Wie viele Elektronen enthält ein Wasserstoff-Atom insgesamt?#atombau>1||2|4|8|10
 Wie viele Elektronen enthält ein Kohlenstoff-Atom insgesamt?#atombau>6||2|4|8|10
 Wie viele Elektronen enthält ein Sauerstoff-Atom insgesamt?#atombau>8||2|4|6|10
-Was wird durch die Anzahl der Protonen im Atomkern bestimmt?#atombau>das Element||das Isotop||das Ion
-Was wird durch die Anzahl der Neutronen im Atomkern bestimmt?#atombau>das Isotop||das Element||das Ion
+Was wird durch die Anzahl der Protonen im Atomkern bestimmt?#atombau>das Element||das Isotop|das Ion
+Was wird durch die Anzahl der Neutronen im Atomkern bestimmt?#atombau>das Isotop||das Element|das Ion
 Wie viele Elektronen Schalen hat ein Kohlenstoff-Atom?#atombau>2||1|3
 Wie viele Elektronen Schalen hat ein Wasserstoff-Atom?#atombau>1||2|3
 Wie viele Elektronen Schalen hat ein Helium-Atom?#atombau>1||2|3
@@ -43,9 +43,9 @@ Welcher Stoff ist gut in Wasser löslich?#bindung>Glucose|Ethanol|Natriumchlorid
 Was ist H⁺?#periodensystem>Proton||Elementarer Wasserstoff|Wasser|Wasserstoff Isotop
 Wie reagieren Säuren?#säurebase>Protonenabgabe||Protonenaufnahme|Elektronenabgabe|Elektronenaufnahme
 Wie reagieren Basen?#säurebase>Protonenaufnahme||Protonenabgabe|Elektronenabgabe|Elektronenaufnahme
-Was findet bei einer Oxidation statt?#redoxreaktion>Elektronenabgabe||Protonenaufnahme||Protonenabgabe|Elektronenaufnahme
-Was findet bei einer Reduktion statt?#redoxreaktion>Elektronenaufnahme||Protonenaufnahme||Protonenabgabe|Elektronenabgabe
-Welcher Stoff wurde am stärksten oxidiert?#redoxreaktion>Kohlenstoffdioxid||Methan||Methanol|Methansäure(Ameisensäure)|Methanal(Formaldehyd)
+Was findet bei einer Oxidation statt?#redoxreaktion>Elektronenabgabe||Protonenaufnahme|Protonenabgabe|Elektronenaufnahme
+Was findet bei einer Reduktion statt?#redoxreaktion>Elektronenaufnahme||Protonenaufnahme|Protonenabgabe|Elektronenabgabe
+Welcher Stoff wurde am stärksten oxidiert?#redoxreaktion>Kohlenstoffdioxid||Methan|Methanol|Methansäure(Ameisensäure)|Methanal(Formaldehyd)
 Wofür werden funktionelle Gruppe verwendet?#organisch>Stoffeigenschaften|typische Reaktionsarten||Es gibt keinen nutzen
 Was ist keine funktionelle Gruppe?#organisch>Methan|Ethan||Alkohol|Aldehyd|Ester|Ether|Keton|Epoxid|Amino
 Welche Eigenschaften besitzen Alkohole?#organisch>wasserlöslich|bilden Wasserstoffbrücken||hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
