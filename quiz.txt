@@ -99,3 +99,42 @@ Welche Namens-Endung haben Salze die PO₄³⁻ enthalten?#bindung>phosphat||chl
 Welche Namens-Endung haben Salze die CO₃²⁻ enthalten?#bindung>carbonat||chlorid|sulfit|sulfat|nitrat|phosphat
 Was entsteht bei der Reaktion zwischen zwei Alkoholen#organisch>Ether||Ester|Ethan
 Was entsteht bei der Reaktion zwischen einem Alkohol und einer Karbonsäure#organisch>Ester||Ether|Ethan
+Was haben Na und Na⁺ gemeinsam?#periodensystem>Anzahl Protonen||Anzahl Elektronen|Anzahl Elektronenschalen|elektrische Ladung|beides Elemente|beides Ionen|beides Moleküle|keine Gemeinsamkeit
+Was haben Mg und Mg²⁺ gemeinsam?#periodensystem>Anzahl Protonen||Anzahl Elektronen|Anzahl Elektronenschalen|elektrische Ladung|beides Elemente|beides Ionen|beides Moleküle|keine Gemeinsamkeit
+Was haben Na⁺ und Mg²⁺ gemeinsam?#periodensystem>Anzahl Elektronen|Anzahl Elektronenschalen|beides Kationen||Anzahl Protonen|elektrische Ladung|beides Elemente|beides Anionen|beides Moleküle|keine Gemeinsamkeit
+Was haben Ca²⁺ und Mg²⁺ gemeinsam?#periodensystem>elektrische Ladung|beides Kationen||Anzahl Protonen|Anzahl Elektronen|Anzahl Elektronenschalen|beides Elemente|beides Anionen|beides Moleküle|keine Gemeinsamkeit
+Was haben Na⁺ und Cl⁻ gemeinsam?#periodensystem>beides Ionen||Anzahl Protonen|Anzahl Elektronen|Anzahl Elektronenschalen|elektrische Ladung|beides Elemente|beides Moleküle|keine Gemeinsamkeit
+Was haben Ne und F⁻ gemeinsam?#periodensystem>Anzahl Elektronen|Anzahl Elektronenschalen||Anzahl Protonen|elektrische Ladung|beides Elemente|beides Ionen|beides Moleküle|keine Gemeinsamkeit
+Was haben Na⁺ und H⁺ gemeinsam?#periodensystem>elektrische Ladung||Anzahl Protonen|Anzahl Elektronen|Anzahl Elektronenschalen|beides Elemente|beides Ionen|beides Moleküle|keine Gemeinsamkeit
+Was haben Na⁺ und He gemeinsam?#periodensystem>Anzahl Elektronen|Anzahl Elektronenschalen||Anzahl Protonen|elektrische Ladung|beides Elemente|beides Ionen|beides Moleküle|keine Gemeinsamkeit
+Wie lautet die allgemeine Reaktion zur Herstellung eines Ether?#organisch>Alkohol + Alkohol → Ether + Wasser||Carbonsäure + Alkohol → Ether + Wasser|Carbonsäure + Alkohol → Ether|Alkohol + Alkohol → Ether
+Wie lautet die allgemeine Reaktion zur Herstellung eines Ester?#organisch>Carbonsäure + Alkohol → Ester + Wasser||Alkohol + Alkohol → Ester + Wasser|Carbonsäure + Alkohol → Ester|Alkohol + Alkohol → Ester
+Was wird als Katalysator verwendet um Ether herzustellen?#organisch>Säuren||Basen|Wasser
+Was wird als Katalysator verwendet um Ester herzustellen?#organisch>Säuren||Basen|Wasser
+Was wird als Katalysator verwendet um Ether aufzuspalten?#organisch>Basen||Säuren|Wasser
+Was wird als Katalysator verwendet um Ester aufzuspalten?#organisch>Basen||Säuren|Wasser
+Was ist kein Zucker?#organisch>Maltase|Lactase||Glucose|Ribose|Lactose|Stärke|Maltose|Desoxyribose|Cellulose
+Alkohol#organisch>R-OH||R=O|O=R-OH|R-O-R|R-NH₂
+Aldehyd#organisch>R=O||R-OH|O=R-OH|R-O-R|R-NH₂
+Carbonsäure#organisch>O=R-OH||R-OH|R=O|R-O-R|R-NH₂
+Ether#organisch>R-O-R||R-OH|R=O|O=R-OH|R-NH₂
+Amino#organisch>R-NH₂||R-OH|R=O|O=R-OH|R-O-R
+Wie lautet die chemische Formel von Wasser?#bindung>H₂O||H₂O₂|NH₃|CH₄|CO₂|CO|NaCl
+Wie lautet die chemische Formel von Wasserstoffperoxid?#bindung>H₂O₂||H₂O|NH₃|CH₄|CO₂|CO|NaCl
+Wie lautet die chemische Formel von Ammoniak?#bindung>NH₃||H₂O|H₂O₂|CH₄|CO₂|CO|NaCl
+Wie lautet die chemische Formel von Methan?#bindung>CH₄||H₂O|H₂O₂|NH₃|CO₂|CO|NaCl
+Wie lautet die chemische Formel von Kohlenstoffdioxid?#bindung>CO₂||H₂O|H₂O₂|NH₃|CO|CH₄|NaCl
+Wie lautet die chemische Formel von Kohlenstoffmonoxid?#bindung>CO||H₂O|H₂O₂|NH₃|CO₂|CH₄|NaCl
+Wie lautet die chemische Formel von Kochsalz?#bindung>NaCl||H₂O|H₂O₂|NH₃|CH₄|CO|CO₂
+Was ist in einer Pflanzen Zelle enthalten?#zellen>Vakuole|Zellkern|Ribosom|endoplasmatisches Retikulum|Golgi Apperat|Zellplasma|Mitochondrium|Zellwand|Chloroplasten|Zellmembran||Plasmid|Geißel|Kapsel
+Was ist in einer Tier Zelle enthalten?#zellen>Zellkern|Ribosom|endoplasmatisches Retikulum|Golgi Apperat|Zellplasma|Mitochondrium|Zellmembran||Plasmid|Vakuole|Chloroplasten|Zellwand|Geißel|Kapsel
+Was ist in einer Bakterien Zelle enthalten?#zellen>Ribosom|Zellplasma|Zellwand|Zellmembran|Plasmid|Geißel|Kapsel||Chloroplasten|Vakuole|Zellkern|endoplasmatisches Retikulum|Golgi Apperat|Mitochondrium
+Was sind Prokaryoten?#zellen>Baktieren|Archaea (Urbakterien)||Tiere|Pflanzen|Viren|Pilze
+Was sind Eukaryoten?#zellen>Tiere|Pflanzen|Pilze||Viren|Baktieren|Archaea (Urbakterien)
+Was bedeutet viruzid?#zellen>Viren abtötend||hemmt Viren Wachstum|hemmt Bakterien Wachstum|hemmt Pilz Wachstum|Bakterien abtötend|Pilz abtötend
+Was bedeutet bakerizid?#zellen>Bakterien abtötend||hemmt Viren Wachstum|hemmt Bakterien Wachstum|hemmt Pilz Wachstum|Viren abtötend|Pilz abtötend
+Was bedeutet fungizid?#zellen>Pilz abtötend||hemmt Viren Wachstum|hemmt Bakterien Wachstum|hemmt Pilz Wachstum|Viren abtötend|Bakterien abtötend
+Was bedeutet virustatisch?#zellen>hemmt Viren Wachstum||hemmt Bakterien Wachstum|hemmt Pilz Wachstum|Viren abtötend|Bakterien abtötend|Pilz abtötend
+Was bedeutet bakeriostatisch?#zellen>hemmt Bakterien Wachstum||hemmt Viren Wachstum|hemmt Pilz Wachstum|Viren abtötend|Bakterien abtötend|Pilz abtötend
+Was bedeutet fungistatisch?#zellen>hemmt Pilz Wachstum||hemmt Viren Wachstum|hemmt Bakterien Wachstum|Viren abtötend|Bakterien abtötend|Pilz abtötend
+Welche Stoffe leiten elektrischen Strom#bindung>Salz-Lösungen|Metalle||Edelgase|Moleküle
