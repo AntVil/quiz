@@ -28,7 +28,10 @@
         <main>
             <input id="questionScreen" name="screenSelection" type="radio">
             <section>
-                <p id="question"></p>
+                <div>
+                    <span id="question"></span>
+                    <span onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)"><span></span></span>
+                </div>
                 <form id="questionForm" onsubmit="return false"></form>
                 <label id="questionLabel" for="listScreen" onclick="navitageToLabel(this.innerText)"></label>
             </section>
@@ -38,7 +41,8 @@
 
             <input id="statisticScreen" name="screenSelection" type="radio">
             <section>
-                <canvas width="500" height="500"></canvas>
+                <canvas id="statisticCanvas" width="500" height="500" onclick="loadStatisticQuestionsCanvasClick(event)"></canvas>
+                <div id="statisticNumbers">a</div>
             </section>
         </main>
     </body>

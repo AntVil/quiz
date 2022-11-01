@@ -1,13 +1,19 @@
 let quiz;
 let statistic;
 
+let statisticCanvas;
+let statisticCanvasContext;
+
 const STATISTICS_MAX_COUNT = 2;
-const STATISTICS_COLORS = ["#A00", "#F33", "#999", "#3F3", "#0A0"];
+const STATISTICS_COLORS = ["#AA0000", "#FF3333", "#AAAAAA", "#33FF33", "#00AA00"];
 
 window.onload = async function(){
     if("serviceWorker" in navigator){
         navigator.serviceWorker.register("./sw.js");
     }
+
+    statisticCanvas = document.getElementById("statisticCanvas", {willReadFrequently: true});
+    statisticCanvasContext = statisticCanvas.getContext("2d");
 
     await loadQuestionList();
     loadRandomQuestion();
@@ -18,12 +24,12 @@ function loadRandomQuestion(){
     loadQuestion(getRandom(quiz.length), loadRandomQuestion, {});
 }
 
-function loadCategoryQuestion({questions, finish}){
+function loadListQuestion({questions, finish}){
     console.log(questions)
     if(questions.length > 0){
         let index = questions.splice(getRandom(questions.length), 1);
         console.log(index)
-        loadQuestion(index, loadCategoryQuestion, {questions: questions, finish: finish});
+        loadQuestion(index, loadListQuestion, {questions: questions, finish: finish});
     }else{
         finish();
     }
@@ -77,13 +83,13 @@ async function loadQuestionList(){
         console.log(categories[category])
         console.log(categories[category].map((_, i) => i))
         categoryButton.onclick = () => {
-            document.getElementById("questionScreen").checked = true;
-            loadCategoryQuestion({
+            loadListQuestion({
                 "questions": categories[category].map(([_, i]) => i),
                 "finish": () => {
                     document.getElementById("listScreen").checked = true;
                 }
-            })
+            });
+            document.getElementById("questionScreen").checked = true;
         }
 
         header.appendChild(headerTitle);
@@ -224,6 +230,11 @@ function loadStatistic(){
 function updateStatistic(index, isCorrect){
     if(isCorrect){
         statistic[index] = Math.min(statistic[index] + 1, 2 * STATISTICS_MAX_COUNT);
+
+        // skip inital state
+        if(statistic[index] == STATISTICS_MAX_COUNT){
+            statistic[index]++;
+        }
     }else{
         statistic[index] = Math.max(Math.min(statistic[index] - 1, STATISTICS_MAX_COUNT - 1), 0);
     }
@@ -244,25 +255,46 @@ function updateStatistic(index, isCorrect){
 function saveStatistic(){
     localStorage.setItem("quizStatistics", statistic.join(""));
 
-    let canvas = document.getElementsByTagName("canvas")[0];
-    let ctxt = canvas.getContext("2d");
-    ctxt.clearRect(0, 0, canvas.width, canvas.height);
+    statisticCanvasContext.clearRect(0, 0, statisticCanvas.width, statisticCanvas.height);
+
+    let statisticNumbers = document.getElementById("statisticNumbers");
+    statisticNumbers.innerHTML = "";
 
     for(let i=0;i<=2 * STATISTICS_MAX_COUNT;i++){
-        let count = 0;
+        let commulativeCount = 0;
+        let absoluteCount = 0;
         for(let x of statistic){
-            if(x >= i){
-                count ++;
+            if(x == i){
+                commulativeCount++;
+                absoluteCount++;
+            }else if(x > i){
+                commulativeCount++;
             }
         }
         
-        let percent = count / statistic.length;
+        let commulativePercent = commulativeCount / statistic.length;
+        let absolutePercent = absoluteCount / statistic.length;
 
-        ctxt.fillStyle = STATISTICS_COLORS[i];
-        ctxt.beginPath();
-        ctxt.moveTo(canvas.width / 2, canvas.height / 2);
-        ctxt.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 + i, -Math.PI / 2, -Math.PI / 2 + percent * 2 * Math.PI);
-        ctxt.fill();
+        statisticCanvasContext.fillStyle = STATISTICS_COLORS[i];
+        statisticCanvasContext.beginPath();
+        statisticCanvasContext.moveTo(statisticCanvas.width / 2, statisticCanvas.height / 2);
+        statisticCanvasContext.arc(statisticCanvas.width / 2, statisticCanvas.height / 2, statisticCanvas.width / 3 + i, -Math.PI / 2, -Math.PI / 2 + commulativePercent * 2 * Math.PI);
+        statisticCanvasContext.closePath();
+        statisticCanvasContext.fill();
+
+        let group = document.createElement("div");
+        group.innerText = absolutePercent.toFixed(2);
+        group.style.backgroundColor = STATISTICS_COLORS[i];
+        group.style.opacity = Math.max(absolutePercent, 0.2);
+        if(absoluteCount > 0){
+            group.onclick = () => {
+                loadStatisticQuestions(i);
+            }
+        }else{
+            group.onclick = () => {};
+        }
+
+        statisticNumbers.appendChild(group);
     }
 }
 
@@ -275,4 +307,35 @@ function navitageToLabel(label){
     let toggle = document.getElementById(`${label}CategoryToggle`);
     toggle.checked = true;
     setTimeout(() => toggle.nextElementSibling.scrollIntoView(), 100);
+}
+
+function loadStatisticQuestionsCanvasClick(e){
+    let rect = statisticCanvas.getBoundingClientRect();
+    
+    let x = statisticCanvas.width * (e.clientX - rect.left) / rect.width;
+    let y = statisticCanvas.height * (e.clientY - rect.top) / rect.height;
+
+    let [r, g, b] = statisticCanvasContext.getImageData(x, y, 1, 1).data;
+    let color = `#${((r << 16) | (g << 8) | b).toString(16)}`.toUpperCase();
+
+    for(let i=0;i<STATISTICS_COLORS.length;i++){
+        if(STATISTICS_COLORS[i] === color){
+            loadStatisticQuestions(i);
+        }
+    }
+}
+
+function loadStatisticQuestions(index){
+    questions = [];
+    for(let i=0;i<statistic.length;i++){
+        if(statistic[i] == index){
+            questions.push(i);
+        }
+    }
+    
+    loadListQuestion({questions: questions, finish: () => {
+        document.getElementById("statisticScreen").checked = true;
+    }});
+    document.getElementById("questionScreen").checked = true;
+    return;
 }

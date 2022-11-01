@@ -1,12 +1,13 @@
 :root{
     --header-size: 50px;
     --list-item-height: 40px;
+    --statistic-item-height: 40px;
     --gap-size: 5px;
     
     --theme-color-0: #FFF;
     --theme-color-1: #DDD;
-    --theme-color-2: #BBB;
-    --font-color: #000;
+    --theme-color-2: #CCC;
+    --font-color: #333;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +23,12 @@
     color: var(--font-color);
     font-family: sans-serif;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 input[type="checkbox"], input[type="radio"]{
@@ -101,6 +108,30 @@ main>section{
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
     font-size: large;
+}
+
+#questionScreen:checked+section>div>span:last-child{
+    width: 32px;
+    height: 32px;
+    background-color: var(--theme-color-0);
+    border-radius: 50%;
+    float: right;
+}
+
+#questionScreen:checked+section>div>span:last-child>span{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: var(--font-color);
+    -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cg transform-origin='20 20' transform='scale(1.5)'%3E%3Cpath fill='%23000' d='M14.9,27.5c-0.9,0-1.8-0.3-2.5-1c-1.4-1.4-1.4-3.6,0-5L20,14c1.9-1.9,5.1-2,7.1,0c1.9,1.9,1.9,5.1,0,7.1 l-5.4,5.4c-0.2,0.2-0.5,0.2-0.7,0s-0.2-0.5,0-0.7l5.4-5.4c1.6-1.6,1.6-4.1,0-5.7c-1.6-1.6-4.1-1.6-5.7,0l-7.5,7.5 c-1,1-1,2.6,0,3.5c1,1,2.6,1,3.5,0l6.8-6.8c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.7,4.7c-0.2,0.2-0.5,0.2-0.7,0 s-0.2-0.5,0-0.7l4.7-4.7c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-6.8,6.8C16.7,27.1,15.8,27.5,14.9,27.5z'/%3E%3C/g%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cg transform-origin='20 20' transform='scale(1.5)'%3E%3Cpath fill='%23000' d='M14.9,27.5c-0.9,0-1.8-0.3-2.5-1c-1.4-1.4-1.4-3.6,0-5L20,14c1.9-1.9,5.1-2,7.1,0c1.9,1.9,1.9,5.1,0,7.1 l-5.4,5.4c-0.2,0.2-0.5,0.2-0.7,0s-0.2-0.5,0-0.7l5.4-5.4c1.6-1.6,1.6-4.1,0-5.7c-1.6-1.6-4.1-1.6-5.7,0l-7.5,7.5 c-1,1-1,2.6,0,3.5c1,1,2.6,1,3.5,0l6.8-6.8c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.7,4.7c-0.2,0.2-0.5,0.2-0.7,0 s-0.2-0.5,0-0.7l4.7-4.7c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-6.8,6.8C16.7,27.1,15.8,27.5,14.9,27.5z'/%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-size: var(--createButtonSize);
+    mask-size: var(--createButtonSize);
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-blend-mode: overlay;
 }
 
 #questionScreen:checked+section>form{
@@ -211,7 +242,7 @@ main{
 #listScreen:checked+section>div>*>span:empty{
     width: 10px;
     height: 10px;
-    background-color: #999;
+    background-color: #AAAAAA;
     border-radius: 50%;
     margin-right: var(--gap-size);
 }
@@ -222,11 +253,25 @@ main{
 
 #statisticScreen:checked+section{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #statisticScreen:checked+section>canvas{
-    width: min(90vw, calc(0.9 * (100vh - var(--header-size))));
-    height: min(90vw, calc(0.9 * (100vh - var(--header-size))));
+    width: min(95vw, calc(0.95 * (100vh - var(--header-size))));
+    height: min(95vw, calc(0.95 * (100vh - var(--header-size))));
+}
+
+#statisticScreen:checked+section>div{
+    display: grid;
+    grid-auto-rows: var(--statistic-item-height);
+    width: 100%;
+    text-align: center;
+}
+
+#statisticScreen:checked+section>div>*{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
