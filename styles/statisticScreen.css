@@ -1,0 +1,39 @@
+#statisticScreen:checked+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+    #statisticScreen:checked+section{
+        flex-direction: row;
+    }
+}
+
+#statisticScreen:checked+section>canvas{
+    width: min(80vw, calc(0.75 * (100vh - var(--header-size))));
+    height: min(80vw, calc(0.75 * (100vh - var(--header-size))));
+    border-radius: 50%;
+    background-color: transparent !important;
+}
+
+#statisticScreen:checked+section>div{
+    display: grid;
+    grid-auto-rows: var(--statistic-item-height);
+    width: 100%;
+    text-align: center;
+}
+
+#statisticScreen:checked+section>div>*{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (hover: hover) {
+    #statisticScreen:checked+section>div>*:hover{
+        color: var(--theme-color-3);
+        cursor: pointer;
+    }
+}

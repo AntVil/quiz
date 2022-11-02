@@ -1,8 +1,20 @@
 let cacheName = "password-manager";
 let filesToCache = [
     "/index.html",
-    "/script.js",
-    "/style.css"
+
+    // js files
+    "/scripts/index.js",
+    "/scripts/util.js",
+    "/scripts/questionScreen.js",
+    "/scripts/listScreen.js",
+    "/scripts/statisticScreen.js",
+
+    // css files
+    "/styles/index.css",
+    "/styles/nav.css",
+    "/styles/questionScreen.css",
+    "/styles/listScreen.css",
+    "/styles/statisticScreen.css"
 ];
 
 self.addEventListener("install", (e) => {

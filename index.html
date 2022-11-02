@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head lang="de">
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>quiz</title>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
         <link rel="manifest" href="manifest.json">
 
         <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=0'>
 
-        <link rel="stylesheet" type="text/css" href="./style.css">
-        <script src="./script.js"></script>
+        <link rel="stylesheet" type="text/css" href="./styles/index.css">
+        <link rel="stylesheet" type="text/css" href="./styles/nav.css">
+        <link rel="stylesheet" type="text/css" href="./styles/questionScreen.css">
+        <link rel="stylesheet" type="text/css" href="./styles/listScreen.css">
+        <link rel="stylesheet" type="text/css" href="./styles/statisticScreen.css">
+
+        <script src="./scripts/index.js"></script>
+        <script src="./scripts/util.js"></script>
+        <script src="./scripts/questionScreen.js"></script>
+        <script src="./scripts/listScreen.js"></script>
+        <script src="./scripts/statisticScreen.js"></script>
     </head>
     <body>
         <header><label for="navToggle">≡</label><h1>quiz</h1></header>
         
         <input id="navToggle" type="checkbox">
         <nav>
-            <label onclick="this.parentElement.previousElementSibling.checked = false;loadRandomQuestion()" for="questionScreen">Zufällige Fragen</label>
+            <label onclick="this.parentElement.previousElementSibling.checked = false" for="questionScreen">Zufällige Fragen</label>
             <label onclick="this.parentElement.previousElementSibling.checked = false" for="listScreen">Alle Fragen</label>
             <label onclick="this.parentElement.previousElementSibling.checked = false" for="statisticScreen">Statistik</label>
         </nav>
 
         <main>
-            <input id="questionScreen" name="screenSelection" type="radio">
+            <input id="questionScreen" name="screenSelection" type="radio" onchange="loadRandomQuestion()">
             <section>
                 <div>
                     <span id="question"></span>

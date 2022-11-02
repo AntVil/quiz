@@ -1,0 +1,60 @@
+:root{
+    --header-size: 50px;
+    --list-item-height: 40px;
+    --statistic-item-height: 40px;
+    --gap-size: 5px;
+    
+    --theme-color-0: #FFF;
+    --theme-color-1: #DDD;
+    --theme-color-2: #CCC;
+    --theme-color-3: #09F;
+    --font-color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --theme-color-0: #333;
+        --theme-color-1: #555;
+        --theme-color-2: #777;
+        --theme-color-3: #F90;
+        --font-color: #FFF;
+    }
+}
+
+@media (hover: hover) {
+    label:hover, label:hover>*, button:hover, button:hover>*, *[onclick]:hover, *[onclick]:hover>*{
+        color: var(--theme-color-3);
+        cursor: pointer;
+    }
+
+    label:empty:hover, label:hover>*:empty, button:empty:hover, button:hover>*:empty, *[onclick]:empty:hover, *[onclick]:hover>*:empty{
+        background-color: var(--theme-color-3);
+        cursor: pointer;
+    }
+}
+
+*{
+    color: var(--font-color);
+    font-family: sans-serif;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="checkbox"], input[type="radio"]{
+    display: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    touch-action: pan-x pan-y;
+    overflow: hidden;
+}
