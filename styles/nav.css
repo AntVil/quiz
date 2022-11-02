@@ -50,7 +50,7 @@ nav>label{
 }
 
 main{
-    height: calc(100vh - var(--header-size));
+    height: calc(var(--screen-height) - var(--header-size));
 }
 
 main>section{

@@ -12,8 +12,8 @@
 }
 
 #statisticScreen:checked+section>canvas{
-    width: min(80vw, calc(0.75 * (100vh - var(--header-size))));
-    height: min(80vw, calc(0.75 * (100vh - var(--header-size))));
+    width: min(calc(0.8 * var(--screen-width)), calc(0.75 * (var(--screen-height) - var(--header-size))));
+    height: min(calc(0.8 * var(--screen-width)), calc(0.75 * (var(--screen-height) - var(--header-size))));
     border-radius: 50%;
     background-color: transparent !important;
 }

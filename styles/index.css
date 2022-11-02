@@ -1,4 +1,6 @@
 :root{
+    --screen-width: 100vw;
+    --screen-height: 100vh;
     --header-size: 50px;
     --list-item-height: 40px;
     --statistic-item-height: 40px;
@@ -50,11 +52,12 @@ input[type="checkbox"], input[type="radio"]{
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
+    width: var(--screen-width);
+    height: var(--screen-height);
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr;
     touch-action: pan-x pan-y;
     overflow: hidden;
+    background-color: var(--theme-color-0);
 }
