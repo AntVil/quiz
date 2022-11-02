@@ -278,11 +278,12 @@ function saveStatistic(){
         statisticCanvasContext.fillStyle = STATISTICS_COLORS[i];
         statisticCanvasContext.beginPath();
         statisticCanvasContext.moveTo(statisticCanvas.width / 2, statisticCanvas.height / 2);
-        statisticCanvasContext.arc(statisticCanvas.width / 2, statisticCanvas.height / 2, statisticCanvas.width / 3 + i, -Math.PI / 2, -Math.PI / 2 + commulativePercent * 2 * Math.PI);
+        statisticCanvasContext.arc(statisticCanvas.width / 2, statisticCanvas.height / 2, statisticCanvas.width * 0.45 + i, -Math.PI / 2, -Math.PI / 2 + commulativePercent * 2 * Math.PI);
         statisticCanvasContext.closePath();
         statisticCanvasContext.fill();
 
         let group = document.createElement("div");
+        group.classList.add(".hoverable");
         group.innerText = absolutePercent.toFixed(2);
         group.style.backgroundColor = STATISTICS_COLORS[i];
         group.style.opacity = Math.max(absolutePercent, 0.2);
