@@ -18,6 +18,8 @@ window.onload = async function(){
     loadQuestionList();
     loadRandomQuestion();
     loadStatistic();
+
+    loadSettings();
 }
 
 window.onresize = () => {

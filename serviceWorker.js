@@ -9,6 +9,7 @@ let filesToCache = [
     "/scripts/listScreen.js",
     "/scripts/statisticScreen.js",
     "/scripts/editScreen.js",
+    "/scripts/settingsScreen.js",
 
     // css files
     "/styles/index.css",
@@ -16,7 +17,8 @@ let filesToCache = [
     "/styles/questionScreen.css",
     "/styles/listScreen.css",
     "/styles/statisticScreen.css",
-    "/styles/editScreen.css"
+    "/styles/editScreen.css",
+    "/styles/settingsScreen.css"
 ];
 
 self.addEventListener("install", (e) => {

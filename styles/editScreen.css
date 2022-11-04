@@ -84,7 +84,7 @@
     grid-template-rows: 1fr 1fr;
     gap: var(--gap-size);
     padding: var(--gap-size);
-    background-color: var(--theme-color-1);
+    background-color: var(--theme-color-2);
     border-radius: var(--gap-size);
 }
 
@@ -95,6 +95,11 @@
 
 #editScreen:checked+section>#promptAccessToken:checked+*>*>*:first-child{
     grid-column: 1 / span 2;
+}
+
+#editScreen:checked+section>#promptAccessToken:checked+*>*>input{
+    background-color: var(--theme-color-1);
+    border: none;
 }
 
 #editScreen:checked+section>#promptAccessToken:checked+*>*>label,

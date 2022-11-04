@@ -116,6 +116,14 @@ function saveStatistic(){
 }
 
 /**
+ * resets all statistics to the initial value
+ */
+function resetStatistic(){
+    statistic = statistic.map(_ => STATISTICS_MAX_COUNT);
+    saveStatistic();
+}
+
+/**
  * Loads all questions with the provided score
  * @param {int} score
  */

@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="./styles/listScreen.css">
         <link rel="stylesheet" type="text/css" href="./styles/statisticScreen.css">
         <link rel="stylesheet" type="text/css" href="./styles/editScreen.css">
+        <link rel="stylesheet" type="text/css" href="./styles/settingsScreen.css">
 
         <script src="./scripts/index.js"></script>
         <script src="./scripts/util.js"></script>
@@ -25,6 +26,7 @@
         <script src="./scripts/listScreen.js"></script>
         <script src="./scripts/statisticScreen.js"></script>
         <script src="./scripts/editScreen.js"></script>
+        <script src="./scripts/settingsScreen.js"></script>
     </head>
     <body>
         <input id="navToggle" type="checkbox" />
@@ -82,11 +84,58 @@
                 <input id="promptAccessToken" type="checkbox" checked />
                 <div>
                     <form onsubmit="return false">
-                        <input id="accessToken" type="password" />
+                        <input id="accessToken" type="password" placeholder="github access token" />
                         <button onclick="document.getElementById('editCancel').click()">abbrechen</button>
                         <button id="promptAccessTokenSubmit" onclick="initialiseOctokit()" disabled>zugreifen</button>
                     </form>
                 </div>
+            </section>
+
+            <input id="settingsScreen" name="screenSelection" type="radio" />
+            <section>
+                <form onsubmit="return false">
+                    <div>
+                        <label>Schriftgröße</label>
+                        <input id="settingFontSize" type="range" onchange="saveSettings(false)" min="10" max="25" />
+
+                        <label>Schriftart</label>
+                        <select id="settingFontStyle" onchange="saveSettings(false)">
+                            <option value="Arial, sans-serif" selected>Arial</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                            <option value="Tahoma, sans-serif">Tahoma</option>
+                            <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                            <option value="'Times New Roman', serif">Times New Roman</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="Garamond, serif">Garamond</option>
+                            <option value="'Courier New', monospace">Courier New</option>
+                        </select>
+
+                        <label>Aussehen</label>
+                        <select id="settingAppearance" onchange="saveSettings(false)">
+                            <option value="system" selected>System</option>
+                            <option value="light">Hell</option>
+                            <option value="dark">Dunkel</option>
+                        </select>
+                    </div>
+                    
+                    <div></div>
+                    
+                    <div>
+                        <label>Start Bildschirm</label>
+                        <select id="settingStartScreen" onchange="saveSettings(false)">
+                            <option value="questionScreen" selected>Zufällige Fragen</option>
+                            <option value="listScreen">Alle Fragen</option>
+                            <option value="statisticScreen">Statistik</option>
+                        </select>
+                    </div>
+                    
+                    <div></div>
+
+                    <div>
+                        <label>Statistik zurücksetzen</label>
+                        <button onclick="promptResetStatistic()">zurücksetzen</button>
+                    </div>
+                </form>
             </section>
         </main>
 
@@ -95,6 +144,7 @@
             <h1>quiz</h1>
             <label id="editQuestion" for="editScreen" onclick="loadEditQuestion()"></label>
             <label id="addQuestion" for="editScreen" onclick="loadAddQuestion()"></label>
+            <label id="openSettings" for="settingsScreen" onclick="document.getElementById('navToggle').checked = false"></label>
         </header>
     </body>
 </html>
