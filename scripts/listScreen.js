@@ -1,5 +1,5 @@
 /**
- * creates the listScreen
+ * creates/updates the listScreen
  */
 function loadQuestionList(){
     let categories = {};
@@ -22,6 +22,7 @@ function loadQuestionList(){
     }
 
     let allQuestionsElement = document.getElementById("listScreen").nextElementSibling;
+    allQuestionsElement.innerHTML = "";
     
     for(let category of Object.keys(categories)){
         // toggle

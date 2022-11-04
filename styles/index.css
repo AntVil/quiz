@@ -24,6 +24,12 @@
     }
 }
 
+@media (prefers-reduced-motion) {
+    *{
+        transition: none !important;
+    }
+}
+
 @media (hover: hover) {
     label:hover, label:hover>*, button:hover, button:hover>*, *[onclick]:hover, *[onclick]:hover>*{
         color: var(--theme-color-3);
