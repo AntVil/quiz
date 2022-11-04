@@ -50,7 +50,7 @@ Wofür werden funktionelle Gruppe verwendet?#organisch>Stoffeigenschaften|typisc
 Was ist keine funktionelle Gruppe?#organisch>Methan|Ethan||Alkohol|Aldehyd|Ester|Ether|Keton|Epoxid|Amino
 Welche Eigenschaften besitzen Alkohole?#organisch>wasserlöslich|bilden Wasserstoffbrücken||hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
 Welche Eigenschaften besitzen Aldehyde?#organisch>bilden Dipol-Dipol-Wechselwirkungen|reagiert als reduktionsmittel||hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
-Welche Eigenschaften besitzen Ketone?#organisch>bilden Dipol-Dipol-Wechselwirkungen||reagiert als reduktionsmittel|hygroskopisch|Nehmen Protonen auf|reagiert als reduktionsmittel
+Welche Eigenschaften besitzen Ketone?#organisch>bilden Dipol-Dipol-Wechselwirkungen||reagiert als reduktionsmittel|hygroskopisch|Nehmen Protonen auf
 Welche Sekundärbindung ist am stärksten?#bindung>Wasserstoffbrücken||Dipol-Dipol-Wechselwirkungen|Van-der-Waals-Kräfte
 Welche Sekundärbindung ist am schwächsten?#bindung>Van-der-Waals-Kräfte||Dipol-Dipol-Wechselwirkungen|Wasserstoffbrücken
 Die Konzentration von Oxoniumionen (H₃O⁺) in einer Lösung ist hoch. Welche Eigenschaft hat die Lösung?#säurebase>sauer||basisch|neutral|hygroskopisch|hydrophob
