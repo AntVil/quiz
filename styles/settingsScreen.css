@@ -14,7 +14,7 @@
     background-color: var(--theme-color-2);
 }
 
-#settingsScreen:checked+section>form>div:not(:empty){
+#settingsScreen:checked+section>form>div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: var(--theme-color-1);

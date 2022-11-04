@@ -33,6 +33,10 @@ let settingElementFunctions = {
     }
 };
 
+/**
+ * loads all settings from previous sessions
+ * is called once at the start
+ */
 function loadSettings(){
     let settings = JSON.parse(localStorage.getItem("quizSettings"));
     if(settings === undefined || settings === null || settings === ""){
@@ -48,6 +52,10 @@ function loadSettings(){
     saveSettings(true);
 }
 
+/**
+ * applies all settings and saves them for future sessions
+ * @param {boolean} isStartUp 
+ */
 function saveSettings(isStartUp){
     let settings = {};
     for(let settingElementId of Object.keys(settingElementFunctions)){
@@ -61,6 +69,9 @@ function saveSettings(isStartUp){
     localStorage.setItem("quizSettings", JSON.stringify(settings));
 }
 
+/**
+ * prompts the user to confirm the deletion of all statistic data
+ */
 function promptResetStatistic(){
     if(window.confirm("Gesamte Statistik zurücksetzen?")){
         resetStatistic();

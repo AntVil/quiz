@@ -96,7 +96,7 @@
                 <form onsubmit="return false">
                     <div>
                         <label>Schriftgröße</label>
-                        <input id="settingFontSize" type="range" onchange="saveSettings(false)" min="10" max="25" />
+                        <input id="settingFontSize" type="range" onchange="saveSettings(false)" min="10" max="30" value="20" />
 
                         <label>Schriftart</label>
                         <select id="settingFontStyle" onchange="saveSettings(false)">
@@ -118,19 +118,15 @@
                         </select>
                     </div>
                     
-                    <div></div>
-                    
                     <div>
                         <label>Start Bildschirm</label>
                         <select id="settingStartScreen" onchange="saveSettings(false)">
-                            <option value="questionScreen" selected>Zufällige Fragen</option>
-                            <option value="listScreen">Alle Fragen</option>
+                            <option value="questionScreen">Zufällige Fragen</option>
+                            <option value="listScreen" selected>Alle Fragen</option>
                             <option value="statisticScreen">Statistik</option>
                         </select>
                     </div>
                     
-                    <div></div>
-
                     <div>
                         <label>Statistik zurücksetzen</label>
                         <button onclick="promptResetStatistic()">zurücksetzen</button>

@@ -74,7 +74,7 @@ function loadAddQuestion(){
  * @returns quiz string
  */
 function getSaveString(index){
-    let label = document.getElementById("editQuestionLabel").value.toLowerCase().trim();
+    let label = document.getElementById("editQuestionLabel").value.toLowerCase().trim().replaceAll(/\||\#|\>/g, "?");
     let question = document.getElementById("editQuestion").value.replaceAll(/\s+/g, " ").trim();
     let correctAnwsers = document.getElementById("editCorrectAnwsers").value.split("\n").map(x => x.trim());
     let wrongAnwsers = document.getElementById("editWrongAnwsers").value.split("\n").map(x => x.trim());
@@ -85,6 +85,9 @@ function getSaveString(index){
     if(question.length === 0){ throw Error("no question specified"); }
     if(correctAnwsers.length === 0){ throw Error("no correct anwsers specified"); }
     if(wrongAnwsers.length === 0){ throw Error("no wrong anwsers specified"); }
+    if((new Set([...correctAnwsers, ...wrongAnwsers])).size !== correctAnwsers.length + wrongAnwsers.length){
+        throw Error("answer is right and wrong");
+    }
 
     for(let i=0;i<quiz.length;i++){
         if(i === index){ continue; }
