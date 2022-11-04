@@ -72,6 +72,11 @@
     height: 20px;
 }
 
+#settingsScreen:checked+section>form>div>label{
+    cursor: unset !important;
+    color: var(--font-color) !important;
+}
+
 @media (hover: hover) {
     #settingsScreen:checked+section>form>div>button:hover,
     #settingsScreen:checked+section>form>div>select:hover,
