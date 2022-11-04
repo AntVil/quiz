@@ -1,0 +1,22 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntVil/quiz.git"
+  },
+  "author": "AntVil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AntVil/quiz/issues"
+  },
+  "homepage": "https://github.com/AntVil/quiz#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
