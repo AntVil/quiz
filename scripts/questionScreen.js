@@ -75,6 +75,7 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     questionElement.innerText = question;
     questionLabel.innerText = label;
     questionForm.innerHTML = "";
+    questionForm.className = "";
     for(let optionElement of optionElements){
         questionForm.appendChild(optionElement);
     }

@@ -75,3 +75,25 @@
 #listScreen:checked+section>*:last-child{
     margin-bottom: calc(var(--screen-height) - var(--header-size) - var(--list-item-height) - 3 * var(--gap-size));
 }
+
+#navToggle:not(:checked)~main:has(#listScreen:checked)~header>#addQuestion{
+    display: inline-block;
+    width: var(--header-size);
+    height: var(--header-size);
+    background-color: var(--font-color);
+    -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cpath fill='%23000' d='M26,20.5H14c-0.3,0-0.5-0.2-0.5-0.5s0.2-0.5,0.5-0.5h12c0.3,0,0.5,0.2,0.5,0.5S26.3,20.5,26,20.5z'/%3E%3Cpath fill='%23000' d='M20,26.5c-0.3,0-0.5-0.2-0.5-0.5V14c0-0.3,0.2-0.5,0.5-0.5s0.5,0.2,0.5,0.5v12C20.5,26.3,20.3,26.5,20,26.5z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cpath fill='%23000' d='M26,20.5H14c-0.3,0-0.5-0.2-0.5-0.5s0.2-0.5,0.5-0.5h12c0.3,0,0.5,0.2,0.5,0.5S26.3,20.5,26,20.5z'/%3E%3Cpath fill='%23000' d='M20,26.5c-0.3,0-0.5-0.2-0.5-0.5V14c0-0.3,0.2-0.5,0.5-0.5s0.5,0.2,0.5,0.5v12C20.5,26.3,20.3,26.5,20,26.5z'/%3E%3C/svg%3E");
+    -webkit-mask-size: var(--header-size);
+    mask-size: var(--header-size);
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+@media (hover: hover) {
+    #navToggle:not(:checked)~main:has(#listScreen:checked)~header>#addQuestion:hover{
+        background-color: var(--theme-color-3);
+    }
+}

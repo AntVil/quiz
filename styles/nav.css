@@ -1,11 +1,13 @@
 header{
+    display: grid;
+    grid-template-columns: var(--header-size) auto var(--header-size);
+    grid-row: 1;
     width: 100%;
     height: var(--header-size);
     background-color: var(--theme-color-0);
 }
 
 header>label{
-    position: fixed;
     width: var(--header-size);
     height: var(--header-size);
     display: flex;
@@ -22,6 +24,10 @@ header>h1{
     align-items: center;
     margin: 0;
     font-size: calc(var(--header-size) / 2);
+}
+
+header>h1~label{
+    display: none;
 }
 
 nav{
@@ -46,7 +52,7 @@ nav{
 }
 
 nav>label{
-    font-size: larger;
+    font-size: var(--font-size);
 }
 
 main{

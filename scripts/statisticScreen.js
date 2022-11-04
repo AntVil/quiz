@@ -76,16 +76,6 @@ function saveStatistic(){
     let statisticNumbers = document.getElementById("statisticNumbers");
     statisticNumbers.innerHTML = "";
 
-    statisticCanvasContext.save();
-
-    // masking
-    statisticCanvasContext.fillStyle = "#FFFFFF";
-    statisticCanvasContext.beginPath();
-    statisticCanvasContext.arc(statisticCanvas.width / 2, statisticCanvas.height / 2, statisticCanvas.width * 0.45, 0, 2 * Math.PI);
-    statisticCanvasContext.fill();
-
-    statisticCanvasContext.clip();
-
     for(let i=0;i<=2 * STATISTICS_MAX_COUNT;i++){
         let commulativeCount = 0;
         let absoluteCount = 0;
@@ -123,8 +113,6 @@ function saveStatistic(){
 
         statisticNumbers.appendChild(group);
     }
-
-    statisticCanvasContext.restore();
 }
 
 /**

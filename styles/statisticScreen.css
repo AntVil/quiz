@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: var(--font-size);
 }
 
 @media screen and (min-width: 600px) {
@@ -15,6 +16,7 @@
     width: min(calc(0.8 * var(--screen-width)), calc(0.75 * (var(--screen-height) - var(--header-size))));
     height: min(calc(0.8 * var(--screen-width)), calc(0.75 * (var(--screen-height) - var(--header-size))));
     border-radius: 50%;
+    padding: 30px;
     background-color: transparent !important;
 }
 
