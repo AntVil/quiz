@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <head lang="de">
+<html lang="de">
+    <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>quiz</title>
@@ -11,6 +11,8 @@
         <link rel="manifest" href="manifest.json">
 
         <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=0'>
+        <meta name="theme-color" content="#000"/>
+        <meta name="description" content="quiz - Progressive Web App (PWA)">
 
         <link rel="stylesheet" type="text/css" href="./styles/index.css">
         <link rel="stylesheet" type="text/css" href="./styles/nav.css">
@@ -20,13 +22,13 @@
         <link rel="stylesheet" type="text/css" href="./styles/editScreen.css">
         <link rel="stylesheet" type="text/css" href="./styles/settingsScreen.css">
 
-        <script src="./scripts/index.js"></script>
-        <script src="./scripts/util.js"></script>
-        <script src="./scripts/questionScreen.js"></script>
-        <script src="./scripts/listScreen.js"></script>
-        <script src="./scripts/statisticScreen.js"></script>
-        <script src="./scripts/editScreen.js"></script>
-        <script src="./scripts/settingsScreen.js"></script>
+        <script defer src="./scripts/index.js"></script>
+        <script defer src="./scripts/util.js"></script>
+        <script defer src="./scripts/questionScreen.js"></script>
+        <script defer src="./scripts/listScreen.js"></script>
+        <script defer src="./scripts/statisticScreen.js"></script>
+        <script defer src="./scripts/editScreen.js"></script>
+        <script defer src="./scripts/settingsScreen.js"></script>
     </head>
     <body>
         <input id="navToggle" type="checkbox" />
@@ -114,7 +116,8 @@
                         <select id="settingAppearance" onchange="saveSettings(false)">
                             <option value="system" selected>System</option>
                             <option value="light">Hell</option>
-                            <option value="dark">Dunkel</option>
+                            <option value="cyberpunk">cyberpunk</option>
+                            <option value="tokioNight">tokio night</option>
                         </select>
                     </div>
                     
@@ -136,7 +139,7 @@
         </main>
 
         <header>
-            <label for="navToggle">≡</label>
+            <label for="navToggle"></label>
             <h1>quiz</h1>
             <label id="editQuestion" for="editScreen" onclick="loadEditQuestion()"></label>
             <label id="addQuestion" for="editScreen" onclick="loadAddQuestion()"></label>

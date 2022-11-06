@@ -6,24 +6,18 @@ let settingElementFunctions = {
         document.documentElement.style.setProperty('--font-family', `${value}`);
     },
     "settingAppearance": ({value}) => {
-        if(value === "light"){
-            document.documentElement.style.setProperty('--theme-color-0', "var(--light-theme-color-0)");
-            document.documentElement.style.setProperty('--theme-color-1', "var(--light-theme-color-1)");
-            document.documentElement.style.setProperty('--theme-color-2', "var(--light-theme-color-2)");
-            document.documentElement.style.setProperty('--theme-color-3', "var(--light-theme-color-3)");
-            document.documentElement.style.setProperty('--font-color', "var(--light-font-color)");
-        }else if(value === "dark"){
-            document.documentElement.style.setProperty('--theme-color-0', "var(--dark-theme-color-0)");
-            document.documentElement.style.setProperty('--theme-color-1', "var(--dark-theme-color-1)");
-            document.documentElement.style.setProperty('--theme-color-2', "var(--dark-theme-color-2)");
-            document.documentElement.style.setProperty('--theme-color-3', "var(--dark-theme-color-3)");
-            document.documentElement.style.setProperty('--font-color', "var(--dark-font-color)");
-        }else{
+        if(value === "system"){
             document.documentElement.style.setProperty('--theme-color-0', "");
             document.documentElement.style.setProperty('--theme-color-1', "");
             document.documentElement.style.setProperty('--theme-color-2', "");
             document.documentElement.style.setProperty('--theme-color-3', "");
             document.documentElement.style.setProperty('--font-color', "");
+        }else{
+            document.documentElement.style.setProperty('--theme-color-0', `var(--${value}-theme-color-0)`);
+            document.documentElement.style.setProperty('--theme-color-1', `var(--${value}-theme-color-1)`);
+            document.documentElement.style.setProperty('--theme-color-2', `var(--${value}-theme-color-2)`);
+            document.documentElement.style.setProperty('--theme-color-3', `var(--${value}-theme-color-3)`);
+            document.documentElement.style.setProperty('--font-color', `var(--${value}-font-color)`);
         }
     },
     "settingStartScreen": ({value, isStartUp}) => {

@@ -38,6 +38,7 @@ function loadQuestionList(){
         headerTitle.innerText = category;
 
         let categoryButton = document.createElement("button");
+        categoryButton.ariaLabel = category;
         categoryButton.onclick = () => {
             loadListQuestion({
                 "questions": categories[category].map(([_, i]) => i),

@@ -21,6 +21,18 @@
     --dark-theme-color-3: #F90;
     --dark-font-color: #FFF;
 
+    --cyberpunk-theme-color-0: #372963;
+    --cyberpunk-theme-color-1: #100D23;
+    --cyberpunk-theme-color-2: #6d5686;
+    --cyberpunk-theme-color-3: #00FF9C;
+    --cyberpunk-font-color: #ff4081;
+
+    --tokioNight-theme-color-0: #959cbd;
+    --tokioNight-theme-color-1: #3d59a1;
+    --tokioNight-theme-color-2: #202330;
+    --tokioNight-theme-color-3: #787c99;
+    --tokioNight-font-color: #5f74ff;
+
     --theme-color-0: var(--light-theme-color-0);
     --theme-color-1: var(--light-theme-color-1);
     --theme-color-2: var(--light-theme-color-2);
