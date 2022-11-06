@@ -27,16 +27,20 @@ let settingElementFunctions = {
         }
     },
     "multipleChoiceQuestionSetting": ({value}) => {
-
+        
     },
     "gapTextQuestionSetting": ({value}) => {
-
+        
     },
     "textQuestionSetting": ({value}) => {
-
+        
     },
     "questionCounterSetting": ({value}) => {
-        
+        if(value === document.getElementById("questionCounterSetting").max){
+            // no counter
+        }else{
+            // counter equal to value
+        }
     }
 };
 
@@ -52,7 +56,12 @@ function loadSettings(){
 
     for(let settingElementId of Object.keys(settingElementFunctions)){
         if(settingElementId in settings){
-            document.getElementById(settingElementId).value = settings[settingElementId];
+            let settingElement = document.getElementById(settingElementId);
+            if(settingElement.type === "checkbox"){
+                settingElement.checked = settings[settingElementId];
+            }else{
+                settingElement.value = settings[settingElementId];
+            }
         }
     }
     
@@ -66,7 +75,13 @@ function loadSettings(){
 function saveSettings(isStartUp){
     let settings = {};
     for(let settingElementId of Object.keys(settingElementFunctions)){
-        let value = document.getElementById(settingElementId).value;
+        let settingElement = document.getElementById(settingElementId);
+        let value;
+        if(settingElement.type === "checkbox"){
+            value = settingElement.checked;
+        }else{
+            value = settingElement.value;
+        }
         settings[settingElementId] = value;
         settingElementFunctions[settingElementId]({
             value: value,

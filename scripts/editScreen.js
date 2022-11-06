@@ -82,18 +82,29 @@ function getSaveString(index){
     correctAnwsers = [...new Set(correctAnwsers)].join("|");
     wrongAnwsers = [...new Set(wrongAnwsers)].join("|");
 
-    if(question.length === 0){ throw Error("no question specified"); }
-    if(correctAnwsers.length === 0){ throw Error("no correct anwsers specified"); }
-    if(wrongAnwsers.length === 0){ throw Error("no wrong anwsers specified"); }
-    if((new Set([...correctAnwsers, ...wrongAnwsers])).size !== correctAnwsers.length + wrongAnwsers.length){
-        throw Error("answer is right and wrong");
+    if(question.length === 0){
+        fadeInfo("keine Frage angegeben");
+        throw Error("no question specified");
     }
-
     for(let i=0;i<quiz.length;i++){
         if(i === index){ continue; }
         if(question === quiz[i]){
+            fadeInfo("Frage existiert bereits");
             throw Error("question exists");
         }
+    }
+
+    if(correctAnwsers.length === 0){
+        fadeInfo("keine korrekten Antworten angegeben");
+        throw Error("no correct anwsers specified");
+    }
+    if(wrongAnwsers.length === 0){
+        fadeInfo("keine falschen Antworten angegeben");
+        throw Error("no wrong anwsers specified");
+    }
+    if((new Set([...correctAnwsers, ...wrongAnwsers])).size !== correctAnwsers.length + wrongAnwsers.length){
+        fadeInfo("Antwort ist korrekt und falsch");
+        throw Error("answer is right and wrong");
     }
     
     return `${question}#${label}>${correctAnwsers}||${wrongAnwsers}`;

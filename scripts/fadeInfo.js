@@ -11,5 +11,5 @@ function fadeInfo(s){
             fadeInfoElement.classList.remove("fadeInfoVisable");
         },
         750
-    )
+    );
 }
