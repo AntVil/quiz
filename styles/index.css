@@ -8,46 +8,6 @@
 
     --font-family: sans-serif;
     --font-size: 20px;
-    
-    --light-theme-color-0: #FFF;
-    --light-theme-color-1: #DDD;
-    --light-theme-color-2: #CCC;
-    --light-theme-color-3: #09F;
-    --light-font-color: #333;
-
-    --dark-theme-color-0: #333;
-    --dark-theme-color-1: #555;
-    --dark-theme-color-2: #777;
-    --dark-theme-color-3: #F90;
-    --dark-font-color: #FFF;
-
-    --cyberpunk-theme-color-0: #372963;
-    --cyberpunk-theme-color-1: #100D23;
-    --cyberpunk-theme-color-2: #6d5686;
-    --cyberpunk-theme-color-3: #00FF9C;
-    --cyberpunk-font-color: #ff4081;
-
-    --tokioNight-theme-color-0: #959cbd;
-    --tokioNight-theme-color-1: #3d59a1;
-    --tokioNight-theme-color-2: #202330;
-    --tokioNight-theme-color-3: #787c99;
-    --tokioNight-font-color: #5f74ff;
-
-    --theme-color-0: var(--light-theme-color-0);
-    --theme-color-1: var(--light-theme-color-1);
-    --theme-color-2: var(--light-theme-color-2);
-    --theme-color-3: var(--light-theme-color-3);
-    --font-color: var(--light-font-color);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root{
-        --theme-color-0: var(--dark-theme-color-0);
-        --theme-color-1: var(--dark-theme-color-1);
-        --theme-color-2: var(--dark-theme-color-2);
-        --theme-color-3: var(--dark-theme-color-3);
-        --font-color: var(--dark-font-color);
-    }
 }
 
 @media (prefers-reduced-motion) {

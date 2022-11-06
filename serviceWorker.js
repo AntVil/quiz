@@ -13,6 +13,7 @@ let filesToCache = [
 
     // css files
     "/styles/index.css",
+    "/styles/themes.css",
     "/styles/nav.css",
     "/styles/questionScreen.css",
     "/styles/listScreen.css",

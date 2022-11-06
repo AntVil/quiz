@@ -1,0 +1,155 @@
+:root{
+    --light-theme-color-0: #FFF;
+    --light-theme-color-1: #DDD;
+    --light-theme-color-2: #CCC;
+    --light-theme-color-3: #09F;
+    --light-font-color: #333;
+
+    --dark-theme-color-0: #333;
+    --dark-theme-color-1: #555;
+    --dark-theme-color-2: #777;
+    --dark-theme-color-3: #F90;
+    --dark-font-color: #FFF;
+
+    --cyberpunk-theme-color-0: #372963;
+    --cyberpunk-theme-color-1: #100D23;
+    --cyberpunk-theme-color-2: #6d5686;
+    --cyberpunk-theme-color-3: #00FF9C;
+    --cyberpunk-font-color: #ff4081;
+
+    --tokioNight-theme-color-0: #959cbd;
+    --tokioNight-theme-color-1: #3d59a1;
+    --tokioNight-theme-color-2: #202330;
+    --tokioNight-theme-color-3: #787c99;
+    --tokioNight-font-color: #5f74ff;
+
+    --shadesOfPurple-theme-color-0:  #2D2B55;
+    --shadesOfPurple-theme-color-1: #1E1E3F;
+    --shadesOfPurple-theme-color-2: #A599E9;
+    --shadesOfPurple-theme-color-3: #FF7200;
+    --shadesOfPurple-font-color: #FAD000;
+
+    --zeonica-theme-color-0: #242272;
+    --zeonica-theme-color-1: #0a092e;
+    --zeonica-theme-color-2: #01001d;
+    --zeonica-theme-color-3: #8e2e62;
+    --zeonica-font-color: #f4f4ff;
+    
+    --hipster-theme-color-0: #ec6051;
+    --hipster-theme-color-1: #1abc9c;
+    --hipster-theme-color-2: #2c3e50;
+    --hipster-theme-color-3: #2c3e50;
+    --hipster-font-color: #ffffff;
+    
+    --wildberry-theme-color-0: #350058;
+    --wildberry-theme-color-1: #0f001a;
+    --wildberry-theme-color-2: #170027;
+    --wildberry-theme-color-3: #cc0066;
+    --wildberry-font-color: #ccccac;
+    
+    --qiita-theme-color-0: #364549;
+    --qiita-theme-color-1: #2c383a;
+    --qiita-theme-color-2: #364549;
+    --qiita-theme-color-3: #55c500;
+    --qiita-font-color: #cccccc;
+    
+    --merkosGreen-theme-color-0: #405200;
+    --merkosGreen-theme-color-1: #0a0f0a;
+    --merkosGreen-theme-color-2: #0a0f0a;
+    --merkosGreen-theme-color-3: #a7d129;
+    --merkosGreen-font-color: #cccccc;
+    
+    --auroraX-theme-color-0: #8eabff;
+    --auroraX-theme-color-1: #06090f;
+    --auroraX-theme-color-2: #06090f;
+    --auroraX-theme-color-3: #86a5ff;
+    --auroraX-font-color: #576daf;
+    
+    --atlanticNight-theme-color-0: #1c2341;
+    --atlanticNight-theme-color-1: #000620;
+    --atlanticNight-theme-color-2: #000620;
+    --atlanticNight-theme-color-3: #101425;
+    --atlanticNight-font-color: #cccccc;
+    
+    --glassUI-theme-color-0: #ffe7e7;
+    --glassUI-theme-color-1: #ffffff;
+    --glassUI-theme-color-2: #fdfdfd;
+    --glassUI-theme-color-3: #ff0040;
+    --glassUI-font-color: #616161;
+    
+    --slime-theme-color-0: #282e2f;
+    --slime-theme-color-1: #282e2f;
+    --slime-theme-color-2: #1e2324;
+    --slime-theme-color-3: #282e2f;
+    --slime-font-color: #9ca2a0;
+    
+    --ariakeDark-theme-color-0: #1c1f26;
+    --ariakeDark-theme-color-1: #1c1f26;
+    --ariakeDark-theme-color-2: #1f212a;
+    --ariakeDark-theme-color-3: #1c1f26;
+    --ariakeDark-font-color: #cccccc;
+    
+    --snazzyLight-theme-color-0: #ececec;
+    --snazzyLight-theme-color-1: #f3f3f3;
+    --snazzyLight-theme-color-2: #fafbfc;
+    --snazzyLight-theme-color-3: #2dae58;
+    --snazzyLight-font-color: #686968;
+    
+    --spacegray-theme-color-0: #1c1f26;
+    --spacegray-theme-color-1: #1c1f26;
+    --spacegray-theme-color-2: #2b303b;
+    --spacegray-theme-color-3: #1c1f26;
+    --spacegray-font-color: #cccccc;
+    
+    --celestial-theme-color-0: #1b1f26;
+    --celestial-theme-color-1: #0a0c0f;
+    --celestial-theme-color-2: #0a0c0f;
+    --celestial-theme-color-3: #f43e5c;
+    --celestial-font-color: #d5d8da;
+    
+    --blueberryDark-theme-color-0: #1d212f;
+    --blueberryDark-theme-color-1: #1d212f;
+    --blueberryDark-theme-color-2: #242938;
+    --blueberryDark-theme-color-3: #27e8a7;
+    --blueberryDark-font-color: #cccccc;
+    
+    --nord-theme-color-0: #3b4252;
+    --nord-theme-color-1: #2e3440;
+    --nord-theme-color-2: #2e3440;
+    --nord-theme-color-3: #81b6c6;
+    --nord-font-color: #d8dee9;
+    
+    --palenight-theme-color-0: #31364a;
+    --palenight-theme-color-1: #31364a;
+    --palenight-theme-color-2: #292d3e;
+    --palenight-theme-color-3: #6d4fa7;
+    --palenight-font-color: #ffffff;
+        
+    --nightOwl-theme-color-0: #0a2942;
+    --nightOwl-theme-color-1: #011627;
+    --nightOwl-theme-color-2: #011627;
+    --nightOwl-theme-color-3: #654aa3;
+    --nightOwl-font-color: #d6deeb;
+    
+    --dracula-theme-color-0: #2e2e2f;
+    --dracula-theme-color-1: #252526;
+    --dracula-theme-color-2: #242424;
+    --dracula-theme-color-3: #0e639c;
+    --dracula-font-color: #cccccc;
+
+    --theme-color-0: var(--light-theme-color-0);
+    --theme-color-1: var(--light-theme-color-1);
+    --theme-color-2: var(--light-theme-color-2);
+    --theme-color-3: var(--light-theme-color-3);
+    --font-color: var(--light-font-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --theme-color-0: var(--dark-theme-color-0);
+        --theme-color-1: var(--dark-theme-color-1);
+        --theme-color-2: var(--dark-theme-color-2);
+        --theme-color-3: var(--dark-theme-color-3);
+        --font-color: var(--dark-font-color);
+    }
+}
