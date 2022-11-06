@@ -14,12 +14,12 @@ window.onload = async function(){
         quiz = localStorage.getItem("quizQuestions");
     }
     quiz = quiz.split("\n").map(s => s.trim()).filter(s => s.length > 0);
+
+    loadSettings();
     
     loadQuestionList();
     loadRandomQuestion();
     loadStatistic();
-
-    loadSettings();
 }
 
 window.onresize = () => {

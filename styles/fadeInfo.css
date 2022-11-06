@@ -1,0 +1,23 @@
+#fadeInfo{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+    background-color: var(--theme-color-2);
+    color: var(--theme-color-3);
+    border-radius: var(--gap-size);
+    transition: all 0.5s;
+}
+
+#fadeInfo.fadeInfoVisable{
+    opacity: 0.8;
+    z-index: 1;
+}

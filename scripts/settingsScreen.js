@@ -19,11 +19,24 @@ let settingElementFunctions = {
             document.documentElement.style.setProperty('--theme-color-3', `var(--${value}-theme-color-3)`);
             document.documentElement.style.setProperty('--font-color', `var(--${value}-font-color)`);
         }
+        document.getElementById("statusbarColor").content = getComputedStyle(document.body).getPropertyValue("--theme-color-0");
     },
     "settingStartScreen": ({value, isStartUp}) => {
         if(isStartUp){
             document.getElementById(value).checked = true;
         }
+    },
+    "multipleChoiceQuestionSetting": ({value}) => {
+
+    },
+    "gapTextQuestionSetting": ({value}) => {
+
+    },
+    "textQuestionSetting": ({value}) => {
+
+    },
+    "questionCounterSetting": ({value}) => {
+        
     }
 };
 

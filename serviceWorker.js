@@ -5,6 +5,7 @@ let filesToCache = [
     // js files
     "/scripts/index.js",
     "/scripts/util.js",
+    "/scripts/fadeInfo.js",
     "/scripts/questionScreen.js",
     "/scripts/listScreen.js",
     "/scripts/statisticScreen.js",
@@ -15,6 +16,7 @@ let filesToCache = [
     "/styles/index.css",
     "/styles/themes.css",
     "/styles/nav.css",
+    "/styles/fadeInfo.css",
     "/styles/questionScreen.css",
     "/styles/listScreen.css",
     "/styles/statisticScreen.css",

@@ -30,6 +30,38 @@
     border: none;
     background-color: var(--theme-color-0);
     cursor: pointer;
+    font-size: var(--font-size);
+}
+
+#settingsScreen:checked+section>form>div>input[type="checkbox"]+label{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: calc(2 * var(--font-size));
+    height: var(--font-size);
+    transform: translate(-50%, -50%);
+    background-color: var(--theme-color-2);
+    border-radius: var(--gap-size);
+    cursor: pointer;
+}
+
+#settingsScreen:checked+section>form>div>input[type="checkbox"]:checked+label{
+    background-color: var(--theme-color-3);
+}
+
+#settingsScreen:checked+section>form>div>input[type="checkbox"]+label::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: var(--font-size);
+    height: var(--font-size);
+    background-color: var(--theme-color-0);
+    border-radius: var(--gap-size);
+    cursor: pointer;
+}
+
+#settingsScreen:checked+section>form>div>input[type="checkbox"]:checked+label::after{
+    right: 0;
 }
 
 #settingsScreen:checked+section>form>div>input[type="range"]{
@@ -45,31 +77,31 @@
     background-color: var(--theme-color-0);
     border-radius: 50%;
     border: none;
-    width: 20px;
-    height: 20px;
+    width: var(--font-size);
+    height: var(--font-size);
 }
 
 #settingsScreen:checked+section>form>div>input[type="range"]::-webkit-slider-runnable-track{
     background-color: var(--theme-color-2);
-    border-radius: 25px;
+    border-radius: var(--gap-size);
     border: none;
-    height: 20px;
+    height: var(--font-size);
 }
 
 #settingsScreen:checked+section>form>div>input[type="range"]::-moz-range-track{
     width: 100%;
     background-color: var(--theme-color-2);
-    border-radius: 25px;
+    border-radius: var(--gap-size);
     border: none;
-    height: 20px;
+    height: var(--font-size);
 }
 
 #settingsScreen:checked+section>form>div>input[type="range"]::-moz-range-thumb{
     background-color: var(--theme-color-0);
-    border-radius: 25px;
+    border-radius: var(--gap-size);
     border: none;
-    width: 20px;
-    height: 20px;
+    width: var(--font-size);
+    height: var(--font-size);
 }
 
 #settingsScreen:checked+section>form>div>label{
