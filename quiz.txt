@@ -32,7 +32,7 @@ Welchem Molekül entsprich die chemische Formel CH₄?#organisch>Methan||Ethan|E
 Welchem Molekül entsprich die chemische Formel C₂H₆?#organisch>Ethan||Methan|Ethen|Ethin|Kohlenstoffdioxid
 Welchem Molekül entsprich die chemische Formel C₂H₄?#organisch>Ethen||Methan|Ethan|Ethin|Kohlenstoffdioxid
 Woraus bestehen Alkane?#organisch>Wasserstoff|Kohlenstoff||Sauerstoff|Stickstoff|Aluminium|Doppelbindungen
-Wovon haben Alkene weniger als Alkane?#organisch>Wasserstoff||Sauerstoff|Elektronen
+Wovon haben Alkene weniger als Alkane?#organisch>Wasserstoff||Sauerstoff|Kohlenstoff
 Welche Eigenschaft besitzen Alkene und Alkine?#organisch>ungesättigt||gesättigt|wasserlöslich|lipophob
 Was ist kein Alkohol?#organisch>Benzol||Methanol|Ethanol|Propanol|Butanol|Pentanol|Hexanol
 Was entsteht bei der Neutralisation?#säurebase>Wasser|Salz||Metall|Zucker

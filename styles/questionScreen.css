@@ -59,15 +59,19 @@
     font-size: inherit;
 }
 
-#questionScreen:checked+section>form.optionChosen>.chosenOption.correctOption{
+#questionScreen:checked+section>form>.chosenOption{
+    border: 5px dashed var(--theme-color-3);
+}
+
+#questionScreen:checked+section>form.questionEvaluated>.chosenOption.correctOption{
     border: 5px solid #0F3;
 }
 
-#questionScreen:checked+section>form.optionChosen>.correctOption{
+#questionScreen:checked+section>form.questionEvaluated>.correctOption{
     border: 5px dashed #0F3;
 }
 
-#questionScreen:checked+section>form.optionChosen>.chosenOption.wrongOption{
+#questionScreen:checked+section>form.questionEvaluated>.chosenOption.wrongOption{
     border: 5px dashed #F30;
 }
 
@@ -102,4 +106,23 @@
     #navToggle:not(:checked)~main:has(#questionScreen:checked)~header>#editQuestion:hover{
         background-color: var(--theme-color-3);
     }
+}
+
+#questionScreen:checked+section>div:last-child{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#questionAnwserSubmit{
+    display: flex;
+    text-align: center;
+    background-color: var(--theme-color-0);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: var(--gap-size);
+    border-radius: 5px;
+    border: none;
+    font-size: var(--font-size);
 }

@@ -49,7 +49,10 @@
                     <span onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText);fadeInfo('Frage kopiert')"><span></span></span>
                 </div>
                 <form id="questionForm" onsubmit="return false"></form>
-                <label id="questionLabel" for="listScreen" onclick="navitageToLabel(this.innerText)"></label>
+                <div>
+                    <button id="questionAnwserSubmit" onclick="evaluateQuestion()"></button>
+                    <label id="questionLabel" for="listScreen" onclick="navitageToLabel(this.innerText)"></label>
+                </div>
             </section>
 
             <input id="listScreen" name="screenSelection" type="radio" checked />

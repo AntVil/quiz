@@ -14,7 +14,7 @@
     background-color: var(--theme-color-2);
     color: var(--theme-color-3);
     border-radius: var(--gap-size);
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 
 #fadeInfo.fadeInfoVisable{

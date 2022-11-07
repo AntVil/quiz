@@ -3,14 +3,13 @@ const MAX_OPTIONS = 4
 /**
  * Creates and returns an option for a question.
  * Call the provided function once the question is completed
- * @param {int} index 
  * @param {string} option 
  * @param {boolean} isCorrect 
  * @param {function} onQuestionCompleted 
  * @param {Object} onQuestionCompletedParams 
  * @returns {HTMLButtonElement} the option element
  */
-function createOptionElement(index, option, isCorrect, onQuestionCompleted, onQuestionCompletedParams){
+function createOptionElement(option, isCorrect, isRadio){
     let optionElement = document.createElement("button");
     optionElement.innerText = option;
 
@@ -21,18 +20,19 @@ function createOptionElement(index, option, isCorrect, onQuestionCompleted, onQu
     }
 
     optionElement.onclick = () => {
-        optionElement.classList.add("chosenOption");
-
-        // add to statistic
-        updateStatistic(index, optionElement.classList.contains("correctOption"));
-
         let questionForm = optionElement.parentElement;
-        questionForm.classList.add("optionChosen");
-        
-        for(let option of questionForm.children){
-            option.onclick = () => {
-                questionForm.classList.remove("optionChosen");
-                onQuestionCompleted(onQuestionCompletedParams);
+        if(!questionForm.classList.contains("questionEvaluated")){
+            if(optionElement.classList.contains("chosenOption")){
+                optionElement.classList.remove("chosenOption");
+            }else{
+                optionElement.classList.add("chosenOption");
+            }
+        }
+        if(isRadio){
+            for(let child of questionForm.children){
+                if(child !== optionElement){
+                    child.classList.remove("chosenOption");
+                }
             }
         }
     }
@@ -60,11 +60,11 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     let wrongOptions = options.slice(sepIndex+1, options.length);
 
     let optionElements = [
-        createOptionElement(index, rightOptions[getRandom(rightOptions.length)], true, onQuestionCompleted, onQuestionCompletedParams)
+        createOptionElement(rightOptions[getRandom(rightOptions.length)], true, true)
     ];
     while(optionElements.length < MAX_OPTIONS && wrongOptions.length > 0){
         optionElements.push(
-            createOptionElement(index, wrongOptions.splice(getRandom(wrongOptions.length), 1), false, onQuestionCompleted, onQuestionCompletedParams)
+            createOptionElement(wrongOptions.splice(getRandom(wrongOptions.length), 1), false, true)
         )
     }
 
@@ -73,13 +73,61 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     let questionElement = document.getElementById("question");
     let questionForm = document.getElementById("questionForm");
     let questionLabel = document.getElementById("questionLabel");
+    let questionAnswerSubmit = document.getElementById("questionAnwserSubmit");
     
     questionElement.innerText = question;
     questionLabel.innerText = label;
+    questionAnswerSubmit.innerText = "Prüfen";
+    questionAnswerSubmit.onclick = () => {
+        evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams);
+    }
     questionForm.innerHTML = "";
     questionForm.className = "";
     for(let optionElement of optionElements){
         questionForm.appendChild(optionElement);
+    }
+}
+
+function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams){
+    let anyOptionSelected = false;
+    let isCorrect = true;
+
+    let questionForm = document.getElementById("questionForm");
+    for(let child of questionForm.children){
+        if(child.classList.contains("chosenOption")){
+            anyOptionSelected = true;
+            if(child.classList.contains("wrongOption")){
+                isCorrect = false;
+                break;
+            }
+        }else{
+            if(child.classList.contains("correctOption")){
+                isCorrect = false;
+            }
+        }
+    }
+
+    if(anyOptionSelected){
+        questionForm.classList.add("questionEvaluated");
+
+        let question = `${document.getElementById("question").innerText}#`;
+        let index;
+        for(let i=0;i<quiz.length;i++){
+            if(quiz[i].startsWith(question)){
+                index = i;
+                break;
+            }
+        }
+        
+        updateStatistic(index, isCorrect);
+
+        let questionAnwserSubmit = document.getElementById("questionAnwserSubmit");
+        questionAnwserSubmit.innerText = "Nächste Frage";
+        questionAnwserSubmit.onclick = () => {
+            onQuestionCompleted(onQuestionCompletedParams)
+        }
+    }else{
+        fadeInfo("keine Antwort angeben");
     }
 }
 
