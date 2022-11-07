@@ -27,13 +27,13 @@ let settingElementFunctions = {
         }
     },
     "multipleChoiceQuestionSetting": ({value}) => {
-        
+        questionGenerationOptions["multipleChoiceQuestionEnabled"] = value;
     },
     "gapTextQuestionSetting": ({value}) => {
-        
+        questionGenerationOptions["gapTextQuestionEnabled"] = value;
     },
     "textQuestionSetting": ({value}) => {
-        
+        questionGenerationOptions["textQuestionEnabled"] = value;
     },
     "questionCounterSetting": ({value}) => {
         if(value === document.getElementById("questionCounterSetting").max){

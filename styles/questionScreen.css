@@ -46,24 +46,41 @@
     justify-content: center;
     align-items: center;
     gap: var(--gap-size);
-    font-size: inherit;
+    font-size: var(--font-size);
 }
 
-#questionScreen:checked+section>form>*{
+#questionScreen:checked+section>form>*:not(:has(>*)){
     width: 75%;
     height: 50%;
     background-color: var(--theme-color-0);
     border-radius: 5px;
     text-align: center;
     border: 5px solid transparent;
-    font-size: inherit;
+    font-size: var(--font-size);
+}
+
+#questionScreen:checked+section>form>*:has(>*){
+    background-color: var(--theme-color-1);
+    padding: var(--gap-size);
+    border-radius: var(--gap-size);
+    font-size: var(--font-size);
+}
+
+#questionScreen:checked+section>form>*>input{
+    background-color: var(--theme-color-0);
+    border: none;
+    margin-left: var(--gap-size);
+    margin-right: var(--gap-size);
+    font-size: var(--font-size);
+    text-align: center;
 }
 
 #questionScreen:checked+section>form>.chosenOption{
     border: 5px dashed var(--theme-color-3);
 }
 
-#questionScreen:checked+section>form.questionEvaluated>.chosenOption.correctOption{
+#questionScreen:checked+section>form.questionEvaluated>.chosenOption.correctOption,
+#questionScreen:checked+section>form.questionEvaluated>*>input.correctText{
     border: 5px solid #0F3;
 }
 
@@ -71,7 +88,8 @@
     border: 5px dashed #0F3;
 }
 
-#questionScreen:checked+section>form.questionEvaluated>.chosenOption.wrongOption{
+#questionScreen:checked+section>form.questionEvaluated>.chosenOption.wrongOption,
+#questionScreen:checked+section>form.questionEvaluated>*>input.wrongText{
     border: 5px dashed #F30;
 }
 

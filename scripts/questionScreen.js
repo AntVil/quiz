@@ -1,4 +1,10 @@
-const MAX_OPTIONS = 4
+const MAX_OPTIONS = 4;
+
+let questionGenerationOptions = {
+    "multipleChoiceQuestionEnabled": false,
+    "gapTextQuestionEnabled": false,
+    "textQuestionEnabled": false
+}
 
 /**
  * Creates and returns an option for a question.
@@ -40,6 +46,101 @@ function createOptionElement(option, isCorrect, isRadio){
     return optionElement;
 }
 
+function generateSingleCoiceQuestion(questionForm, rightOptions, wrongOptions){
+    let optionElements = [
+        createOptionElement(rightOptions[getRandom(rightOptions.length)], true, true)
+    ];
+    while(optionElements.length < MAX_OPTIONS && wrongOptions.length > 0){
+        optionElements.push(
+            createOptionElement(wrongOptions.splice(getRandom(wrongOptions.length), 1), false, true)
+        )
+    }
+
+    for(let optionElement of shuffle(optionElements)){
+        questionForm.appendChild(optionElement);
+    }
+    questionForm.classList.add("options");
+    
+    return true;
+}
+
+function generateMultipleChoiceQuestion(questionForm, rightOptions, wrongOptions){
+    let optionElements = [
+        createOptionElement(rightOptions.splice(getRandom(rightOptions.length), 1), true, false)
+    ];
+    while(optionElements.length < MAX_OPTIONS && rightOptions.length + wrongOptions.length > 0){
+        if(Math.random() < 0.5){
+            if(rightOptions.length > 0){
+                optionElements.push(
+                    createOptionElement(rightOptions.splice(getRandom(rightOptions.length), 1), true, false)
+                )
+            }
+        }else{
+            if(wrongOptions.length > 0){
+                optionElements.push(
+                    createOptionElement(wrongOptions.splice(getRandom(wrongOptions.length), 1), false, false)
+                )
+            }
+        }
+    }
+
+    for(let optionElement of shuffle(optionElements)){
+        questionForm.appendChild(optionElement);
+    }
+    questionForm.classList.add("options");
+
+    return true;
+}
+
+function generateGapTextQuestion(questionForm, rightOptions, wrongOptions){
+    let anwser = rightOptions[getRandom(rightOptions.length)];
+
+    let gapIndices = Array.from(anwser.matchAll(/(?=([A-Za-zÄÜÖäöü0-9]{4,}))/g)).map(x => x.index);
+    if(gapIndices.length === 0){
+        return false;
+    }
+    let gapIndex = gapIndices[getRandom(gapIndices.length)];
+
+    let container = document.createElement("div");
+    let preText = document.createElement("span");
+    let textInput = document.createElement("input");
+    let postText = document.createElement("span");
+
+    preText.innerText = anwser.slice(0, gapIndex);
+    textInput.placeholder = "....";
+    textInput.style.width = "calc(4 * var(--font-size))";
+    postText.innerText = anwser.slice(gapIndex + 4, anwser.length);
+
+    container.appendChild(preText);
+    container.appendChild(textInput);
+    container.appendChild(postText);
+    questionForm.appendChild(container);
+    questionForm.classList.add("text");
+
+    return true;
+}
+
+function generateTextQuestion(questionForm, rightOptions, wrongOptions){
+    let isTypable = false;
+    for(let rightOption of rightOptions){
+        if(/^[A-Za-zÄÜÖäöü0-9 \-]+/.test(rightOption) && rightOption.length < 10){
+            isTypable = true;
+            break;
+        }
+    }
+    if(!isTypable){
+        return false;
+    }
+    let container = document.createElement("div");
+    let textInput = document.createElement("input");
+    textInput.placeholder = "Antwort";
+    container.appendChild(textInput)
+    questionForm.appendChild(container);
+    questionForm.classList.add("text");
+
+    return true;
+}
+
 /**
  * loads a question and calls the provided function once the question is completed
  * @param {int} index 
@@ -59,17 +160,6 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     let rightOptions = options.slice(0, sepIndex);
     let wrongOptions = options.slice(sepIndex+1, options.length);
 
-    let optionElements = [
-        createOptionElement(rightOptions[getRandom(rightOptions.length)], true, true)
-    ];
-    while(optionElements.length < MAX_OPTIONS && wrongOptions.length > 0){
-        optionElements.push(
-            createOptionElement(wrongOptions.splice(getRandom(wrongOptions.length), 1), false, true)
-        )
-    }
-
-    optionElements = shuffle(optionElements);
-
     let questionElement = document.getElementById("question");
     let questionForm = document.getElementById("questionForm");
     let questionLabel = document.getElementById("questionLabel");
@@ -77,47 +167,94 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     
     questionElement.innerText = question;
     questionLabel.innerText = label;
-    questionAnswerSubmit.innerText = "Prüfen";
-    questionAnswerSubmit.onclick = () => {
-        evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams);
+    if(onQuestionCompleted !== null && onQuestionCompletedParams !== null){
+        questionAnswerSubmit.innerText = "Prüfen";
+        questionAnswerSubmit.onclick = () => {
+            evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams);
+        }
     }
     questionForm.innerHTML = "";
     questionForm.className = "";
-    for(let optionElement of optionElements){
-        questionForm.appendChild(optionElement);
+
+    generationOptions = [generateSingleCoiceQuestion];
+    if(questionGenerationOptions["multipleChoiceQuestionEnabled"]){ generationOptions.push(generateMultipleChoiceQuestion); }
+    if(questionGenerationOptions["gapTextQuestionEnabled"]){ generationOptions.push(generateGapTextQuestion); }
+    if(questionGenerationOptions["textQuestionEnabled"]){ generationOptions.push(generateTextQuestion); }
+
+    let i = getRandom(generationOptions.length);
+    while(!generationOptions[i](questionForm, rightOptions, wrongOptions)){
+        i = getRandom(generationOptions.length);
     }
 }
 
 function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams){
-    let anyOptionSelected = false;
+    let question = `${document.getElementById("question").innerText}#`;
+    let index;
+    for(let i=0;i<quiz.length;i++){
+        if(quiz[i].startsWith(question)){
+            index = i;
+            break;
+        }
+    }
+
+    let validAnwser = false;
     let isCorrect = true;
 
     let questionForm = document.getElementById("questionForm");
-    for(let child of questionForm.children){
-        if(child.classList.contains("chosenOption")){
-            anyOptionSelected = true;
-            if(child.classList.contains("wrongOption")){
-                isCorrect = false;
-                break;
+    if(questionForm.classList.contains("options")){
+        for(let child of questionForm.children){
+            if(child.classList.contains("chosenOption")){
+                validAnwser = true;
+                if(child.classList.contains("wrongOption")){
+                    isCorrect = false;
+                    break;
+                }
+            }else{
+                if(child.classList.contains("correctOption")){
+                    isCorrect = false;
+                }
             }
-        }else{
-            if(child.classList.contains("correctOption")){
-                isCorrect = false;
+        }
+    }else if(questionForm.classList.contains("text")){
+        let anwser = "";
+        validAnwser = true;
+        for(let child of questionForm.children[0].children){
+            if(child.tagName === "INPUT"){
+                if(child.value.trim().length === 0){
+                    validAnwser = false;
+                    break;
+                }
+
+                anwser += child.value.trim();
+            }else{
+                anwser += child.innerText;
+            }
+        }
+        if(validAnwser){
+            let options = quiz[index].split(">")[1].split("|");
+            let sepIndex = options.indexOf("");
+            let rightOptions = options.slice(0, sepIndex).map(s => s.toLowerCase());
+            if(rightOptions.includes(anwser.toLowerCase())){
+                isCorrect = true;
+                for(let child of questionForm.children[0].children){
+                    if(child.tagName === "INPUT"){
+                        child.classList.add("correctText");
+                        child.disabled = true;
+                    }
+                }
+            }else{
+                for(let child of questionForm.children[0].children){
+                    if(child.tagName === "INPUT"){
+                        child.classList.add("wrongText");
+                        child.disabled = true;
+                    }
+                }
             }
         }
     }
 
-    if(anyOptionSelected){
+    if(validAnwser){
         questionForm.classList.add("questionEvaluated");
-
-        let question = `${document.getElementById("question").innerText}#`;
-        let index;
-        for(let i=0;i<quiz.length;i++){
-            if(quiz[i].startsWith(question)){
-                index = i;
-                break;
-            }
-        }
         
         updateStatistic(index, isCorrect);
 
@@ -157,53 +294,5 @@ function loadRandomQuestion(){
  * @param {int} index 
  */
 function updateLoadedQuestion(index){
-    let [head, foot] = quiz[index].split(">");
-    let [question, label] = head.split("#");
-
-    if(label === null || label === undefined || label === ""){
-        label = "andere";
-    }
-    
-    let options = foot.split("|");
-    let sepIndex = options.indexOf("");
-    let rightOptions = options.slice(0, sepIndex);
-    let wrongOptions = options.slice(sepIndex+1, options.length);
-
-    let questionElement = document.getElementById("question");
-    let questionForm = document.getElementById("questionForm");
-    let questionLabel = document.getElementById("questionLabel");
-
-    questionElement.innerText = question;
-    questionLabel.innerText = label;
-
-    let count = 0;
-    let sampleWrongOption;
-    for(let option of questionForm.children){
-        if(option.classList.contains("correctOption")){
-            option.innerText = rightOptions[getRandom(rightOptions.length)];
-            count++;
-        }else{
-            if(wrongOptions.length > 0){
-                sampleWrongOption = option;
-                option.innerText = wrongOptions.splice(getRandom(wrongOptions.length), 1);
-                count++;
-            }else{
-                option.remove();
-            }
-        }
-    }
-
-    while(count < MAX_OPTIONS && wrongOptions.length > 0){
-        let option = sampleWrongOption.cloneNode(true);
-        option.innerText = wrongOptions.splice(getRandom(wrongOptions.length), 1);
-        option.classList.remove("chosenOption");
-        option.onclick = () => {
-            sampleWrongOption.click();
-
-            sampleWrongOption.classList.remove("chosenOption");
-            option.classList.add("chosenOption");
-        }
-        questionForm.appendChild(option);
-        count++;
-    }
+    loadQuestion(index, null, null)
 }
