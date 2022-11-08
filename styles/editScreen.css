@@ -126,4 +126,12 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     background-blend-mode: overlay;
+    padding: 0;
+    border: none;
+}
+
+@media (hover: hover) {
+    #navToggle:not(:checked)~main:has(#editScreen:checked)~header>#deleteQuestion:hover{
+        background-color: var(--theme-color-3);
+    }
 }

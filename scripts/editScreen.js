@@ -38,6 +38,15 @@ function loadEditQuestion(){
     document.getElementById("editCancel").onclick = () => {
         document.getElementById("questionScreen").checked = true;
     }
+
+    document.getElementById("deleteQuestion").onclick = () => {
+        if(octokit !== undefined){
+            if(window.confirm("Frage unwiderruflich löschen?")){
+                quiz.splice([index]);
+                uploadQuiz(`remove question ${index}`);
+            }
+        }
+    }
 }
 
 /**
@@ -63,6 +72,10 @@ function loadAddQuestion(){
 
     document.getElementById("editCancel").onclick = () => {
         document.getElementById("listScreen").checked = true;
+    }
+
+    document.getElementById("deleteQuestion").onclick = () => {
+        document.getElementById("editCancel").click();
     }
 }
 

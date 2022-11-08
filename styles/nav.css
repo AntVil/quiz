@@ -26,7 +26,8 @@ header>h1{
     font-size: calc(var(--header-size) / 2);
 }
 
-header>h1~label{
+header>h1~label,
+header>h1~button{
     display: none;
 }
 
