@@ -42,8 +42,10 @@ function loadEditQuestion(){
     document.getElementById("deleteQuestion").onclick = () => {
         if(octokit !== undefined){
             if(window.confirm("Frage unwiderruflich löschen?")){
-                quiz.splice([index]);
+                quiz.splice(index, 1);
                 uploadQuiz(`remove question ${index}`);
+                
+                document.getElementById("listScreen").checked = true;
             }
         }
     }

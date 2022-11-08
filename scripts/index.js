@@ -30,11 +30,17 @@ window.onorientationchange = () => {
     setViewportSize();
 }
 
+/**
+ * sets the css viewport size, since vw and vh are not consisten
+ */
 function setViewportSize(){
     document.documentElement.style.setProperty('--screen-width', `${window.innerWidth}px`);
     document.documentElement.style.setProperty('--screen-height', `${window.innerHeight}px`);
 }
 
+/**
+ * loads the quiz from cache or downloads it and adjusts the cached statistic if neccecary
+ */
 async function loadQuiz(){
     let downloadedQuiz;
     

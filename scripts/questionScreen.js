@@ -46,6 +46,13 @@ function createOptionElement(option, isCorrect, isRadio){
     return optionElement;
 }
 
+/**
+ * Generates a question with exactly one correct anwser
+ * @param {HTMLFormElement} questionForm 
+ * @param {Array<string>} rightOptions 
+ * @param {Array<string>|undefined} wrongOptions 
+ * @returns successful
+ */
 function generateSingleCoiceQuestion(questionForm, rightOptions, wrongOptions){
     let optionElements = [
         createOptionElement(rightOptions[getRandom(rightOptions.length)], true, true)
@@ -64,6 +71,13 @@ function generateSingleCoiceQuestion(questionForm, rightOptions, wrongOptions){
     return true;
 }
 
+/**
+ * Generates a question with atleast one right anwsers
+ * @param {HTMLFormElement} questionForm 
+ * @param {Array<string>} rightOptions 
+ * @param {Array<string>|undefined} wrongOptions 
+ * @returns successful
+ */
 function generateMultipleChoiceQuestion(questionForm, rightOptions, wrongOptions){
     let optionElements = [
         createOptionElement(rightOptions.splice(getRandom(rightOptions.length), 1), true, false)
@@ -92,6 +106,13 @@ function generateMultipleChoiceQuestion(questionForm, rightOptions, wrongOptions
     return true;
 }
 
+/**
+ * Generates a question with a single text input inside of the question
+ * @param {HTMLFormElement} questionForm 
+ * @param {Array<string>} rightOptions 
+ * @param {Array<string>|undefined} wrongOptions 
+ * @returns successful
+ */
 function generateGapTextQuestion(questionForm, rightOptions, wrongOptions){
     let anwser = rightOptions[getRandom(rightOptions.length)];
 
@@ -120,6 +141,13 @@ function generateGapTextQuestion(questionForm, rightOptions, wrongOptions){
     return true;
 }
 
+/**
+ * Generates a question with a single text input
+ * @param {HTMLFormElement} questionForm 
+ * @param {Array<string>} rightOptions 
+ * @param {Array<string>|undefined} wrongOptions 
+ * @returns successful
+ */
 function generateTextQuestion(questionForm, rightOptions, wrongOptions){
     let isTypable = false;
     for(let rightOption of rightOptions){
