@@ -47,7 +47,7 @@
     --wildberry-theme-color-3: #cc0066;
     --wildberry-font-color: #ccccac;
     
-    --qiita-theme-color-0: #364549;
+    --qiita-theme-color-0: #405a61;
     --qiita-theme-color-1: #2c383a;
     --qiita-theme-color-2: #364549;
     --qiita-theme-color-3: #55c500;
@@ -55,37 +55,37 @@
     
     --merkosGreen-theme-color-0: #405200;
     --merkosGreen-theme-color-1: #0a0f0a;
-    --merkosGreen-theme-color-2: #0a0f0a;
+    --merkosGreen-theme-color-2: #202b20;
     --merkosGreen-theme-color-3: #a7d129;
     --merkosGreen-font-color: #cccccc;
     
     --auroraX-theme-color-0: #8eabff;
     --auroraX-theme-color-1: #06090f;
-    --auroraX-theme-color-2: #06090f;
+    --auroraX-theme-color-2: #233559;
     --auroraX-theme-color-3: #86a5ff;
     --auroraX-font-color: #576daf;
     
     --atlanticNight-theme-color-0: #1c2341;
-    --atlanticNight-theme-color-1: #000620;
+    --atlanticNight-theme-color-1: #02104c;
     --atlanticNight-theme-color-2: #000620;
     --atlanticNight-theme-color-3: #101425;
     --atlanticNight-font-color: #cccccc;
     
     --glassUI-theme-color-0: #ffe7e7;
-    --glassUI-theme-color-1: #ffffff;
+    --glassUI-theme-color-1: #f2d6d6;
     --glassUI-theme-color-2: #fdfdfd;
     --glassUI-theme-color-3: #ff0040;
     --glassUI-font-color: #616161;
     
     --slime-theme-color-0: #282e2f;
-    --slime-theme-color-1: #282e2f;
+    --slime-theme-color-1: #2e4043;
     --slime-theme-color-2: #1e2324;
-    --slime-theme-color-3: #282e2f;
+    --slime-theme-color-3: #304b50;
     --slime-font-color: #9ca2a0;
     
-    --ariakeDark-theme-color-0: #1c1f26;
-    --ariakeDark-theme-color-1: #1c1f26;
-    --ariakeDark-theme-color-2: #1f212a;
+    --ariakeDark-theme-color-0: #272d3b;
+    --ariakeDark-theme-color-1: #313849;
+    --ariakeDark-theme-color-2: #24293f;
     --ariakeDark-theme-color-3: #1c1f26;
     --ariakeDark-font-color: #cccccc;
     
@@ -95,44 +95,44 @@
     --snazzyLight-theme-color-3: #2dae58;
     --snazzyLight-font-color: #686968;
     
-    --spacegray-theme-color-0: #1c1f26;
-    --spacegray-theme-color-1: #1c1f26;
+    --spacegray-theme-color-0: #36383d;
+    --spacegray-theme-color-1: #1c2331;
     --spacegray-theme-color-2: #2b303b;
     --spacegray-theme-color-3: #1c1f26;
     --spacegray-font-color: #cccccc;
     
     --celestial-theme-color-0: #1b1f26;
     --celestial-theme-color-1: #0a0c0f;
-    --celestial-theme-color-2: #0a0c0f;
+    --celestial-theme-color-2: #212730;
     --celestial-theme-color-3: #f43e5c;
     --celestial-font-color: #d5d8da;
     
     --blueberryDark-theme-color-0: #1d212f;
-    --blueberryDark-theme-color-1: #1d212f;
+    --blueberryDark-theme-color-1: #202948;
     --blueberryDark-theme-color-2: #242938;
     --blueberryDark-theme-color-3: #27e8a7;
     --blueberryDark-font-color: #cccccc;
     
     --nord-theme-color-0: #3b4252;
-    --nord-theme-color-1: #2e3440;
+    --nord-theme-color-1: #323b4d;
     --nord-theme-color-2: #2e3440;
     --nord-theme-color-3: #81b6c6;
     --nord-font-color: #d8dee9;
     
     --palenight-theme-color-0: #31364a;
-    --palenight-theme-color-1: #31364a;
+    --palenight-theme-color-1: #373f5d;
     --palenight-theme-color-2: #292d3e;
     --palenight-theme-color-3: #6d4fa7;
     --palenight-font-color: #ffffff;
         
     --nightOwl-theme-color-0: #0a2942;
     --nightOwl-theme-color-1: #011627;
-    --nightOwl-theme-color-2: #011627;
+    --nightOwl-theme-color-2: #011d35;
     --nightOwl-theme-color-3: #654aa3;
     --nightOwl-font-color: #d6deeb;
     
     --dracula-theme-color-0: #2e2e2f;
-    --dracula-theme-color-1: #252526;
+    --dracula-theme-color-1: #393940;
     --dracula-theme-color-2: #242424;
     --dracula-theme-color-3: #0e639c;
     --dracula-font-color: #cccccc;
