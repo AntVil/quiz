@@ -42,6 +42,7 @@ function setViewportSize(){
  */
 async function loadQuiz(){
     let downloadedQuiz;
+    let cachedQuiz;
     
     try{
         downloadedQuiz = (await (await fetch("quiz.txt")).text()).split("\n").map(s => s.trim()).filter(s => s.length > 0);
@@ -50,7 +51,7 @@ async function loadQuiz(){
     }
     
     try{
-        let cachedQuiz = localStorage.getItem("quizQuestions").split("\n").map(s => s.trim()).filter(s => s.length > 0);
+        cachedQuiz = localStorage.getItem("quizQuestions").split("\n").map(s => s.trim()).filter(s => s.length > 0);
     }catch{
         quiz = downloadedQuiz;
         return;
