@@ -49,7 +49,12 @@ async function loadQuiz(){
 
     }
     
-    let cachedQuiz = localStorage.getItem("quizQuestions").split("\n").map(s => s.trim()).filter(s => s.length > 0);
+    try{
+        let cachedQuiz = localStorage.getItem("quizQuestions").split("\n").map(s => s.trim()).filter(s => s.length > 0);
+    }catch{
+        quiz = downloadedQuiz;
+        return;
+    }
 
     if(downloadedQuiz === undefined){
         quiz = cachedQuiz;
