@@ -24,6 +24,9 @@ let settingElementFunctions = {
     "settingStartScreen": ({value, isStartUp}) => {
         if(isStartUp){
             document.getElementById(value).checked = true;
+            if(value === "questionScreen"){
+                loadRandomQuestion();
+            }
         }
     },
     "multipleChoiceQuestionSetting": ({value}) => {
@@ -37,9 +40,9 @@ let settingElementFunctions = {
     },
     "questionCounterSetting": ({value}) => {
         if(value === document.getElementById("questionCounterSetting").max){
-            // no counter
+            questionGenerationOptions.availableSeconds = Infinity;
         }else{
-            // counter equal to value
+            questionGenerationOptions.availableSeconds = parseInt(value);
         }
     }
 };

@@ -6,8 +6,25 @@
 
 #questionScreen:checked+section>div{
     display: block;
-    margin: 0 auto;
+    position: relative;
     width: 75%;
+    margin: 0 auto;
+}
+
+#questionScreen:checked+section>div>div{
+    position: absolute;
+    bottom: var(--gap-size);
+    width: 100%;
+    height: calc(2 * var(--gap-size));
+    background-color: var(--theme-color-1);
+    border-radius: var(--gap-size);
+}
+
+#questionScreen:checked+section>div>div>div{
+    width: 100%;
+    height: 100%;
+    background-color: var(--theme-color-3);
+    border-radius: var(--gap-size);
 }
 
 #questionScreen:checked+section>div>span:last-child{

@@ -12,7 +12,6 @@ window.onload = async function(){
     loadSettings();
     
     loadQuestionList();
-    loadRandomQuestion();
     loadStatistic();
 }
 

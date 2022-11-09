@@ -3,7 +3,8 @@ const MAX_OPTIONS = 4;
 let questionGenerationOptions = {
     "multipleChoiceQuestionEnabled": false,
     "gapTextQuestionEnabled": false,
-    "textQuestionEnabled": false
+    "textQuestionEnabled": false,
+    "availableSeconds": Infinity
 }
 
 /**
@@ -192,13 +193,39 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     let questionForm = document.getElementById("questionForm");
     let questionLabel = document.getElementById("questionLabel");
     let questionAnswerSubmit = document.getElementById("questionAnwserSubmit");
-    
+    let questionCountdown = document.getElementById("questionCountdown");
+    let countDownEnabled = false;
+
+    if(questionGenerationOptions.availableSeconds === Infinity){
+        questionCountdown.parentElement.style.display = "none";
+    }else{
+        countDownEnabled = true;
+        questionCountdown.parentElement.style.display = "";
+        let startTime = Date.now();
+        let counterLoop = () => {
+            let remainingSeconds = questionGenerationOptions.availableSeconds - (Date.now() - startTime) / 1000;
+            
+            questionCountdown.style.width = `${(Math.max(remainingSeconds / questionGenerationOptions.availableSeconds, 0)) * 100}%`;
+
+            if(countDownEnabled){
+                if(remainingSeconds > 0){
+                    setTimeout(counterLoop, 30);
+                }else{
+                    evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, true);
+                }
+            }
+        }
+        counterLoop();
+    }
+
     questionElement.innerText = question;
     questionLabel.innerText = label;
     if(onQuestionCompleted !== null && onQuestionCompletedParams !== null){
         questionAnswerSubmit.innerText = "Prüfen";
         questionAnswerSubmit.onclick = () => {
-            evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams);
+            if(evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, false)){
+                countDownEnabled = false;
+            }
         }
     }
     questionForm.innerHTML = "";
@@ -215,7 +242,7 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     }
 }
 
-function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams){
+function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceEvaluate){
     let question = `${document.getElementById("question").innerText}#`;
     let index;
     for(let i=0;i<quiz.length;i++){
@@ -278,10 +305,12 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams){
                     }
                 }
             }
+        }else{
+            isCorrect = false;
         }
     }
 
-    if(validAnwser){
+    if(validAnwser || forceEvaluate){
         questionForm.classList.add("questionEvaluated");
         
         updateStatistic(index, isCorrect);
@@ -291,8 +320,10 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams){
         questionAnwserSubmit.onclick = () => {
             onQuestionCompleted(onQuestionCompletedParams)
         }
+        return true;
     }else{
         fadeInfo("keine Antwort angeben");
+        return false;
     }
 }
 
