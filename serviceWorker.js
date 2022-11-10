@@ -1,27 +1,27 @@
 let cacheName = "password-manager";
 let filesToCache = [
-    "/index.html",
+    "/quiz/index.html",
 
     // js files
-    "/scripts/index.js",
-    "/scripts/util.js",
-    "/scripts/fadeInfo.js",
-    "/scripts/questionScreen.js",
-    "/scripts/listScreen.js",
-    "/scripts/statisticScreen.js",
-    "/scripts/editScreen.js",
-    "/scripts/settingsScreen.js",
+    "/quiz/scripts/index.js",
+    "/quiz/scripts/util.js",
+    "/quiz/scripts/fadeInfo.js",
+    "/quiz/scripts/questionScreen.js",
+    "/quiz/scripts/listScreen.js",
+    "/quiz/scripts/statisticScreen.js",
+    "/quiz/scripts/editScreen.js",
+    "/quiz/scripts/settingsScreen.js",
 
     // css files
-    "/styles/index.css",
-    "/styles/themes.css",
-    "/styles/nav.css",
-    "/styles/fadeInfo.css",
-    "/styles/questionScreen.css",
-    "/styles/listScreen.css",
-    "/styles/statisticScreen.css",
-    "/styles/editScreen.css",
-    "/styles/settingsScreen.css"
+    "/quiz/styles/index.css",
+    "/quiz/styles/themes.css",
+    "/quiz/styles/nav.css",
+    "/quiz/styles/fadeInfo.css",
+    "/quiz/styles/questionScreen.css",
+    "/quiz/styles/listScreen.css",
+    "/quiz/styles/statisticScreen.css",
+    "/quiz/styles/editScreen.css",
+    "/quiz/styles/settingsScreen.css"
 ];
 
 self.addEventListener("install", (e) => {

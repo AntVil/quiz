@@ -1,3 +1,6 @@
+const OWNER = "AntVil";
+const REPO = "quiz";
+
 let Octokit;
 let octokit;
 
@@ -146,8 +149,8 @@ async function initialiseOctokit(){
         });
     
         await octokit.repos.get({
-            "owner": "AntVil",
-            "repo": "quiz"
+            "owner": OWNER,
+            "repo": REPO
         })
     
         document.getElementById("promptAccessToken").checked = false;
@@ -163,11 +166,11 @@ async function initialiseOctokit(){
 async function uploadQuiz(commitMessage){
     let content = quiz.join("\n").replaceAll("\r", "").replaceAll("\n", "\r\n").replaceAll(" ", " ");
 
-    let {data: {sha}} = await octokit.request("GET /repos/AntVil/quiz/contents/quiz.txt");
+    let {data: {sha}} = await octokit.request(`GET /repos/${OWNER}/${REPO}/contents/quiz.txt`);
 
     await octokit.repos.createOrUpdateFileContents({
-        "owner": "AntVil",
-        "repo": "quiz",
+        "owner": OWNER,
+        "repo": REPO,
         "path": "quiz.txt",
         "sha": sha,
         "message": commitMessage,
