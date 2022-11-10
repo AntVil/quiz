@@ -6,6 +6,7 @@ let questionGenerationOptions = {
     "textQuestionEnabled": false,
     "availableSeconds": Infinity
 }
+let questionCountDownLoop = () => {};
 
 /**
  * Creates and returns an option for a question.
@@ -202,20 +203,23 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
         countDownEnabled = true;
         questionCountdown.parentElement.style.display = "";
         let startTime = Date.now();
-        let counterLoop = () => {
+        let questionScreen = document.getElementById("questionScreen");
+        
+        questionCountDownLoop = () => {
             let remainingSeconds = questionGenerationOptions.availableSeconds - (Date.now() - startTime) / 1000;
             
             questionCountdown.style.width = `${(Math.max(remainingSeconds / questionGenerationOptions.availableSeconds, 0)) * 100}%`;
 
-            if(countDownEnabled){
+            if(countDownEnabled && questionScreen.checked){
                 if(remainingSeconds > 0){
-                    setTimeout(counterLoop, 30);
+                    setTimeout(questionCountDownLoop, 30);
                 }else{
                     evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, true);
                 }
             }
         }
-        counterLoop();
+        
+        setTimeout(questionCountDownLoop, 100);
     }
 
     questionElement.innerText = question;
