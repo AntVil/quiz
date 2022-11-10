@@ -47,6 +47,7 @@ input[type="checkbox"], input[type="radio"]{
 }
 
 body{
+    position: fixed;
     width: var(--screen-width);
     height: var(--screen-height);
     margin: 0;

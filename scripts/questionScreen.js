@@ -231,8 +231,12 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     questionForm.innerHTML = "";
     questionForm.className = "";
 
-    generationOptions = [generateSingleCoiceQuestion];
-    if(questionGenerationOptions["multipleChoiceQuestionEnabled"]){ generationOptions.push(generateMultipleChoiceQuestion); }
+    generationOptions = [];
+    if(questionGenerationOptions["multipleChoiceQuestionEnabled"]){
+        generationOptions.push(generateMultipleChoiceQuestion);
+    }else{
+        generationOptions.push(generateSingleCoiceQuestion);
+    }
     if(questionGenerationOptions["gapTextQuestionEnabled"]){ generationOptions.push(generateGapTextQuestion); }
     if(questionGenerationOptions["textQuestionEnabled"]){ generationOptions.push(generateTextQuestion); }
 
