@@ -17,6 +17,7 @@
 
 #listScreen:checked+section>label>*:first-child{
     margin: 0;
+    font-size: var(--font-size);
 }
 
 #listScreen:checked+section>label>*:last-child{
@@ -60,6 +61,9 @@
     grid-template-columns: auto auto 1fr;
     align-items: center;
     text-align: left;
+    font-size: var(--font-size);
+    white-space: nowrap;
+    overflow-x: hidden;
 }
 
 #listScreen:checked+section>div>*>span:empty{
