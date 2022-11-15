@@ -320,6 +320,15 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
 
     if(validAnwser || forceEvaluate){
         questionForm.classList.add("questionEvaluated");
+
+        if(isCorrect){
+            var audio = new Audio('sounds/Success.mp3');
+            audio.play();
+        }
+        else{
+            var audio = new Audio('sounds/Fail.mp3');
+            audio.play();
+        }
         
         updateStatistic(index, isCorrect);
 
