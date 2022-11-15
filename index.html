@@ -160,6 +160,11 @@
                     </div>
 
                     <div>
+                        <label>Lautstärke</label>
+                        <input id="soundEffectGainSetting" type="range" onchange="saveSettings(false)" min="0" max="1" value="0" step="0.05" />
+                    </div>
+
+                    <div>
                         <label>Mehrfach Auswahl</label>
                         <input id="multipleChoiceQuestionSetting" type="checkbox" onchange="saveSettings(false)" />
                         <label for="multipleChoiceQuestionSetting"></label>

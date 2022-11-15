@@ -44,6 +44,9 @@ let settingElementFunctions = {
         }else{
             questionGenerationOptions.availableSeconds = parseInt(value);
         }
+    },
+    "soundEffectGainSetting": ({value}) => {
+        // value is read directly
     }
 };
 

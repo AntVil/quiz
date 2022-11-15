@@ -321,16 +321,14 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
     if(validAnwser || forceEvaluate){
         questionForm.classList.add("questionEvaluated");
 
+        let audio;
         if(isCorrect){
-            let audio = new Audio('sounds/Success.mp3');
-            audio.volume = 0.5;
-            audio.play();
+            audio = new Audio('sounds/Success.mp3');
+        }else{
+            audio = new Audio('sounds/Fail.mp3');
         }
-        else{
-            let audio = new Audio('sounds/Fail.mp3');
-            audio.volume = 0.5;
-            audio.play();
-        }
+        audio.volume = parseFloat(document.getElementById("soundEffectGainSetting").value);
+        audio.play();
         
         updateStatistic(index, isCorrect);
 
