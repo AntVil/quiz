@@ -323,10 +323,12 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
 
         if(isCorrect){
             let audio = new Audio('sounds/Success.mp3');
+            audio.volume = 0.1;
             audio.play();
         }
         else{
             let audio = new Audio('sounds/Fail.mp3');
+            audio.volume = 0.1;
             audio.play();
         }
         
