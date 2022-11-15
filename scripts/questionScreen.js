@@ -322,11 +322,11 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
         questionForm.classList.add("questionEvaluated");
 
         if(isCorrect){
-            var audio = new Audio('sounds/Success.mp3');
+            let audio = new Audio('sounds/Success.mp3');
             audio.play();
         }
         else{
-            var audio = new Audio('sounds/Fail.mp3');
+            let audio = new Audio('sounds/Fail.mp3');
             audio.play();
         }
         
