@@ -195,6 +195,10 @@
                         <button onclick="promptResetStatistic()">zurücksetzen</button>
                     </div>
                 </form>
+                <input id="showQR" type="checkbox" checked />
+                <div>
+                    <button id="QRCode" onclick="document.getElementById('showQR').checked = true"></button>
+                </div>
             </section>
         </main>
 
@@ -205,7 +209,7 @@
             <label id="addQuestion" for="editScreen" onclick="loadAddQuestion()"></label>
             <label id="openSettings" for="settingsScreen" onclick="document.getElementById('navToggle').checked = false"></label>
             <button id="deleteQuestion"></button>
-            <button id="openQR"></button>
+            <button id="openQR" onclick="document.getElementById('showQR').checked = !(document.getElementById('showQR').checked)"></button>
         </header>
 
         <div id="fadeInfo"></div>
