@@ -21,6 +21,9 @@ let settingElementFunctions = {
         }
         document.getElementById("statusbarColor").content = getComputedStyle(document.body).getPropertyValue("--theme-color-0");
     },
+    "fadeInfoTime": ({value}) => {
+        fadeTime = value;
+    },
     "settingStartScreen": ({value, isStartUp}) => {
         if(isStartUp){
             document.getElementById(value).checked = true;
