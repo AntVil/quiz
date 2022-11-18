@@ -277,6 +277,7 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
                     isCorrect = false;
                 }
             }
+            child.disabled = true;
         }
     }else if(questionForm.classList.contains("text")){
         let anwser = "";
