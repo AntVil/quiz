@@ -200,11 +200,10 @@
                         <button onclick="promptResetStatistic()">zurücksetzen</button>
                     </div>
                 </form>
-                <input id="showQR" type="checkbox" checked />
-                <div>
-                    <img id="QRCode" src="./images/qrcode.png" onclick="document.getElementById('showQR').checked = true"/>
-                    
-                </div>
+                <input id="showQR" type="checkbox" />
+                <label for="showQR">
+                    <img id="QRCode" src="./images/qrcode.png" />
+                </label>
             </section>
         </main>
 
@@ -213,9 +212,9 @@
             <h1>quiz</h1>
             <label id="editQuestion" for="editScreen" onclick="loadEditQuestion()"></label>
             <label id="addQuestion" for="editScreen" onclick="loadAddQuestion()"></label>
-            <label id="openSettings" for="settingsScreen" onclick="document.getElementById('navToggle').checked = false ; document.getElementById('showQR').checked = true"></label>
+            <label id="openSettings" for="settingsScreen" onclick="document.getElementById('navToggle').checked = false ; document.getElementById('showQR').checked = false"></label>
             <button id="deleteQuestion"></button>
-            <button id="openQR" onclick="document.getElementById('showQR').checked = !(document.getElementById('showQR').checked)"></button>
+            <label id="openQR" for="showQR"></label>
         </header>
 
         <div id="fadeInfo"></div>
