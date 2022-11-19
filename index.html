@@ -160,11 +160,6 @@
                     </div>
 
                     <div>
-                        <label>Info Screen</label>
-                        <input id="fadeInfoTime" type="range" onchange="saveSettings(false)" step="50" min="500" max="2000" value="750" />
-                    </div>
-
-                    <div>
                         <label>Lautstärke</label>
                         <input id="soundEffectGainSetting" type="range" onchange="saveSettings(false)" min="0" max="1" value="0" step="0.05" />
                     </div>
@@ -193,6 +188,8 @@
                             <option value="listScreen" selected>Alle Fragen</option>
                             <option value="statisticScreen">Statistik</option>
                         </select>
+                        <label>Dauer Info Meldung</label>
+                        <input id="fadeInfoTime" type="range" onchange="saveSettings(false)" step="50" min="500" max="2000" value="750" />
                     </div>
                     
                     <div>
