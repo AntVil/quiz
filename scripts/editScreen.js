@@ -144,16 +144,19 @@ async function setupOktokit(){
  */
 async function initialiseOctokit(){
     try{
-        octokit = new Octokit({
-            auth: document.getElementById("accessToken").value.trim()
-        });
-    
-        await octokit.repos.get({
-            "owner": OWNER,
-            "repo": REPO
-        })
-    
-        document.getElementById("promptAccessToken").checked = false;
+        if(document.getElementById("accessToken").value == ""){
+            fadeInfo("Kein Github Access-Token eingetragen");
+        }else{
+            octokit = new Octokit({
+                auth: document.getElementById("accessToken").value.trim()
+            });
+        
+            await octokit.repos.get({
+                "owner": OWNER,
+                "repo": REPO
+            })
+            document.getElementById("promptAccessToken").checked = false;
+        }
     }catch{
         
     }
