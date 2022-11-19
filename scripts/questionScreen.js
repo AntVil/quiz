@@ -130,6 +130,7 @@ function generateGapTextQuestion(questionForm, rightOptions, wrongOptions){
     let postText = document.createElement("span");
 
     preText.innerText = anwser.slice(0, gapIndex);
+    textInput.spellcheck = false;
     textInput.placeholder = "....";
     textInput.style.width = "calc(4 * var(--font-size))";
     postText.innerText = anwser.slice(gapIndex + 4, anwser.length);
@@ -163,6 +164,7 @@ function generateTextQuestion(questionForm, rightOptions, wrongOptions){
     }
     let container = document.createElement("div");
     let textInput = document.createElement("input");
+    textInput.spellcheck = false;
     textInput.placeholder = "Antwort";
     container.appendChild(textInput)
     questionForm.appendChild(container);
@@ -276,8 +278,7 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
                 if(child.classList.contains("correctOption")){
                     isCorrect = false;
                 }
-            }
-            child.disabled = true;
+            }  
         }
     }else if(questionForm.classList.contains("text")){
         let anwser = "";
@@ -338,6 +339,13 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
         questionAnwserSubmit.onclick = () => {
             onQuestionCompleted(onQuestionCompletedParams)
         }
+
+        if(questionForm.classList.contains("options")){
+            for(let child of questionForm.children){
+                child.disabled = true;  
+            }
+        }
+
         return true;
     }else{
         fadeInfo("keine Antwort angeben");
