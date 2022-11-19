@@ -158,7 +158,7 @@ async function initialiseOctokit(){
             document.getElementById("promptAccessToken").checked = false;
         }
     }catch{
-        
+        fadeInfo("Zugriff verweigert");
     }
 }
 
