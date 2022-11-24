@@ -7,6 +7,7 @@ let questionGenerationOptions = {
     "availableSeconds": Infinity
 }
 let questionCountDownLoop = () => {};
+let questionAudioContext;
 
 /**
  * Creates and returns an option for a question.
@@ -252,6 +253,14 @@ function loadQuestion(index, onQuestionCompleted, onQuestionCompletedParams){
     }
 }
 
+/**
+ * Evaluates the question and returns true if the evaluation was successful.
+ * If a question should be evaluated even if the anwser is invalid set forceEvaluate to `true`.
+ * @param {function} onQuestionCompleted 
+ * @param {Object} onQuestionCompletedParams 
+ * @param {boolean} forceEvaluate 
+ * @returns successful
+ */
 function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceEvaluate){
     let question = `${document.getElementById("question").innerText}#`;
     let index;
@@ -308,6 +317,7 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
                     }
                 }
             }else{
+                isCorrect = false;
                 for(let child of questionForm.children[0].children){
                     if(child.tagName === "INPUT"){
                         child.classList.add("wrongText");
@@ -322,15 +332,8 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
 
     if(validAnwser || forceEvaluate){
         questionForm.classList.add("questionEvaluated");
-
-        let audio;
-        if(isCorrect){
-            audio = new Audio('sounds/Success.mp3');
-        }else{
-            audio = new Audio('sounds/Fail.mp3');
-        }
-        audio.volume = parseFloat(document.getElementById("soundEffectGainSetting").value);
-        audio.play();
+        
+        playAudio(isCorrect);
         
         updateStatistic(index, isCorrect);
 
@@ -351,6 +354,39 @@ function evaluateQuestion(onQuestionCompleted, onQuestionCompletedParams, forceE
         fadeInfo("keine Antwort angeben");
         return false;
     }
+}
+
+/**
+ * plays a positive or negative sound depending on the parameter 
+ * @param {boolean} positive 
+ */
+function playAudio(positive){
+    questionAudioContext = new AudioContext();
+
+    let endTime = questionAudioContext.currentTime + 0.35;
+
+    let volume = questionAudioContext.createGain();
+    volume.connect(questionAudioContext.destination);
+    volume.gain.setValueAtTime(0.1 * parseFloat(document.getElementById("soundEffectGainSetting").value), questionAudioContext.currentTime);
+    volume.gain.linearRampToValueAtTime(0, endTime);
+
+    let oscillator = questionAudioContext.createOscillator();
+    oscillator.type = 'sine';
+    if(positive){
+        oscillator.frequency.setValueAtTime(440, questionAudioContext.currentTime);
+        oscillator.frequency.setValueAtTime(587.33, questionAudioContext.currentTime + 0.15);
+    }else{
+        oscillator.frequency.setValueAtTime(392, questionAudioContext.currentTime);
+        oscillator.frequency.setValueAtTime(369.99, questionAudioContext.currentTime + 0.15);
+    }
+    oscillator.connect(volume);
+
+    oscillator.start();
+    oscillator.stop(endTime);
+
+    setTimeout(() => {
+        oscillator.stop();
+    }, 500);
 }
 
 /**

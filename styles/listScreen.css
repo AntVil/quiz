@@ -109,7 +109,7 @@
     border-radius: 50%;
     border: 6px solid #fff;
     border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite
+    animation: listScreenLoadAnimation 1.2s linear infinite
 }
 
 #listScreen:checked+section:empty{
@@ -118,11 +118,11 @@
     justify-content: center;
 }
 
-@keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
+@keyframes listScreenLoadAnimation{
+    0%{
+        transform: rotate(0deg);
     }
-    100% {
-      transform: rotate(360deg);
+    100%{
+        transform: rotate(360deg);
     }
 }

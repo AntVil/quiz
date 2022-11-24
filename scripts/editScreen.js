@@ -144,12 +144,13 @@ async function setupOktokit(){
  */
 async function initialiseOctokit(){
     try{
-        if(document.getElementById("accessToken").value == ""){
+        let token = document.getElementById("accessToken").value.trim();
+        if(token == ""){
+            // remove spaces
+            document.getElementById("accessToken").value = "";
             fadeInfo("Kein Github Access-Token eingetragen");
         }else{
-            octokit = new Octokit({
-                auth: document.getElementById("accessToken").value.trim()
-            });
+            octokit = new Octokit({auth: token});
         
             await octokit.repos.get({
                 "owner": OWNER,
