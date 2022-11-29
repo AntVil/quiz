@@ -37,6 +37,11 @@ function loadQuestionList(){
         let headerTitle = document.createElement("h3");
         headerTitle.innerText = category;
 
+        //progress bar
+        var p = 20 + '%';  //ToDo
+        var r = document.querySelector(':root');
+        r.style.setProperty('--percentage', p);
+
         let categoryButton = document.createElement("button");
         categoryButton.ariaLabel = category;
         categoryButton.onclick = () => {
