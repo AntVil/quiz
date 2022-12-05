@@ -24,8 +24,6 @@ function loadQuestionList(){
     let allQuestionsElement = document.getElementById("listScreen").nextElementSibling;
     allQuestionsElement.innerHTML = "";
 
-    let questionIndex = 0;
-    
     for(let category of Object.keys(categories)){
         // toggle
         let categoryToggle = document.createElement("input");
@@ -41,7 +39,6 @@ function loadQuestionList(){
 
         let categoryButton = document.createElement("button");
         categoryButton.ariaLabel = category;
-
         categoryButton.onclick = () => {
             loadListQuestion({
                 "questions": categories[category].map(([_, i]) => i),
@@ -82,34 +79,26 @@ function loadQuestionList(){
         allQuestionsElement.appendChild(categoryContent);
         
         //progress bar
-
-        statisticString = localStorage.getItem("quizStatistics");
-        statistic = [];
-        if(statisticString !== null && statisticString !== undefined && statisticString !== ""){
-            statistic = statisticString.split("").map(n => parseInt(n));
+        let binCount = [];
+        for(let i=0;i<2*STATISTICS_MAX_COUNT+1;i++){
+            binCount.push(0);
+        }
+        for(let [_, index] of categories[category]){
+            binCount[statistic[index]] += 1;
         }
 
-        for(let i=statistic.length;i<quiz.length;i++){
-            statistic.push(STATISTICS_MAX_COUNT);
-        }
+        let borderImage = "linear-gradient(to right";
+        let cumulativePercentage = 0;
+        let totalCount = categories[category].length;
+        for(let i=0;i<binCount.length;i++){
+            let percentage = 100 * (binCount[i] / totalCount);
+            borderImage += `, ${STATISTICS_COLORS[i]} ${cumulativePercentage}%, ${STATISTICS_COLORS[i]} ${cumulativePercentage + percentage}%`;
 
-        let category_stat = 0;
-        for(let i=questionIndex;i<(categories[category].length+questionIndex);i++){
-            let diff = statistic[i] - STATISTICS_MAX_COUNT;
-            if(diff > 0){
-                category_stat += diff;
-            }
+            cumulativePercentage += percentage;
         }
-        questionIndex = categories[category].length - 1;
+        borderImage += ") 1";
 
-        let p = (category_stat/(2*categories[category].length))*100;
-        
-        // this should work, but doesn't  ¯\_(ツ)_/¯ :
-        //categoryButton.setAttribute("style", "border-top: 5px solid");
-        //categoryButton.setAttribute("style", `border-image: linear-gradient(to rigth, green ${p}%, red ${p}%)`);
-        //so I still do this:
-        var r = document.querySelector(':root');
-        r.style.setProperty('--percentage', p + "%");
+        header.style.borderImage = borderImage;
     }
 }
 
@@ -117,7 +106,7 @@ function loadQuestionList(){
  * Scrolls to the provided label in the listScreen
  * @param {string} label 
  */
-function navitageToLabel(label){
+function navigateToLabel(label){
     for(let child of document.getElementById("listScreen").nextElementSibling.children){
         if(child.type === "checkbox" || child.type === "radio"){
             child.checked = false;

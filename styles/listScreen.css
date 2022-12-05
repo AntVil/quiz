@@ -14,7 +14,6 @@
     padding: 0 var(--gap-size);
     margin: var(--gap-size) 0;
     border-top: 5px solid;
-    border-image: linear-gradient(to right, green var(--percentage), red var(--percentage)) 1;
 }
 
 #listScreen:checked+section>label>*:first-child{

@@ -7,7 +7,7 @@ const STATISTICS_MAX_COUNT = 2;
 const STATISTICS_COLORS = ["#AA0000", "#FF3333", "#AAAAAA", "#33FF33", "#00AA00"];
 
 /**
- * Initializes the statitics
+ * Initializes the statistics
  */
 function loadStatistic(){
     statisticCanvas = document.getElementById("statisticCanvas");
@@ -23,6 +23,13 @@ function loadStatistic(){
         statistic.push(STATISTICS_MAX_COUNT);
     }
 
+    saveStatistic();
+}
+
+/**
+ * Sets all statistics of all questions
+ */
+function setupQuestionListStatistic(){
     for(let i=0;i<statistic.length;i++){
         let children = document.getElementById(`question${i}`).children;
         let diff = statistic[i] - STATISTICS_MAX_COUNT;
@@ -31,8 +38,6 @@ function loadStatistic(){
             children[j].style.backgroundColor = color;
         }
     }
-
-    saveStatistic();
 }
 
 /**
@@ -44,7 +49,7 @@ function updateStatistic(index, isCorrect){
     if(isCorrect){
         statistic[index] = Math.min(statistic[index] + 1, 2 * STATISTICS_MAX_COUNT);
 
-        // skip inital state
+        // skip initial state
         if(statistic[index] == STATISTICS_MAX_COUNT){
             statistic[index]++;
         }
@@ -53,8 +58,10 @@ function updateStatistic(index, isCorrect){
     }
     saveStatistic();
     
-    let children = document.getElementById(`question${index}`).children;
+    let questionElement = document.getElementById(`question${index}`)
+    let children = questionElement.children;
 
+    // single question
     let diff = statistic[index] - STATISTICS_MAX_COUNT;
     let color = (diff > 0) ? "#0F0" : "#F00";
     for(let i=0;i<Math.abs(diff);i++){
@@ -63,6 +70,30 @@ function updateStatistic(index, isCorrect){
     for(let i=Math.abs(diff);i<STATISTICS_MAX_COUNT;i++){
         children[i].style.backgroundColor = "";
     }
+
+    // categories
+    let binCount = [];
+    for(let i=0;i<2 * STATISTICS_MAX_COUNT + 1;i++){
+        binCount.push(0);
+    }
+    console.log(questionElement)
+    for(let categoryQuestionElement of questionElement.parentElement.children){
+        let index = parseInt(categoryQuestionElement.id.slice(8));
+        binCount[statistic[index]] += 1;
+    }
+
+    let borderImage = "linear-gradient(to right";
+    let cumulativePercentage = 0;
+    let totalCount = questionElement.parentElement.children.length;
+    for(let i=0;i<binCount.length;i++){
+        let percentage = 100 * (binCount[i] / totalCount);
+        borderImage += `, ${STATISTICS_COLORS[i]} ${cumulativePercentage}%, ${STATISTICS_COLORS[i]} ${cumulativePercentage + percentage}%`;
+
+        cumulativePercentage += percentage;
+    }
+    borderImage += ") 1";
+
+    questionElement.parentElement.previousElementSibling.style.borderImage = borderImage;
 }
 
 /**
@@ -77,24 +108,24 @@ function saveStatistic(){
     statisticNumbers.innerHTML = "";
 
     for(let i=0;i<=2 * STATISTICS_MAX_COUNT;i++){
-        let commulativeCount = 0;
+        let commutativeCount = 0;
         let absoluteCount = 0;
         for(let x of statistic){
             if(x == i){
-                commulativeCount++;
+                commutativeCount++;
                 absoluteCount++;
             }else if(x > i){
-                commulativeCount++;
+                commutativeCount++;
             }
         }
         
-        let commulativePercent = commulativeCount / statistic.length;
+        let commutativePercent = commutativeCount / statistic.length;
         let absolutePercent = absoluteCount / statistic.length;
 
         statisticCanvasContext.fillStyle = STATISTICS_COLORS[i];
         statisticCanvasContext.beginPath();
         statisticCanvasContext.moveTo(statisticCanvas.width / 2, statisticCanvas.height / 2);
-        statisticCanvasContext.arc(statisticCanvas.width / 2, statisticCanvas.height / 2, statisticCanvas.width, -Math.PI / 2, -Math.PI / 2 + commulativePercent * 2 * Math.PI);
+        statisticCanvasContext.arc(statisticCanvas.width / 2, statisticCanvas.height / 2, statisticCanvas.width, -Math.PI / 2, -Math.PI / 2 + commutativePercent * 2 * Math.PI);
         statisticCanvasContext.closePath();
         statisticCanvasContext.fill();
 

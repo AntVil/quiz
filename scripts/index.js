@@ -11,8 +11,9 @@ window.onload = async function(){
 
     loadSettings();
     
-    loadQuestionList();
     loadStatistic();
+    loadQuestionList();
+    setupQuestionListStatistic();
 }
 
 window.onresize = () => {
@@ -30,7 +31,7 @@ window.onorientationchange = () => {
 }
 
 /**
- * sets the css viewport size, since vw and vh are not consisten
+ * sets the css viewport size, since vw and vh are not consistent
  */
 function setViewportSize(){
     document.documentElement.style.setProperty('--screen-width', `${window.innerWidth}px`);
@@ -38,7 +39,7 @@ function setViewportSize(){
 }
 
 /**
- * loads the quiz from cache or downloads it and adjusts the cached statistic if neccecary
+ * loads the quiz from cache or downloads it and adjusts the cached statistic if necessary
  */
 async function loadQuiz(){
     let downloadedQuiz;
