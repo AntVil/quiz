@@ -1,6 +1,5 @@
 #settingsScreen:checked+section{
     display: flex;
-    align-items: center;
     justify-content: center;
     font-size: var(--font-size);
 }
@@ -16,12 +15,31 @@
 
 #settingsScreen:checked+section>form>div{
     display: grid;
-    grid-template-columns: 1fr 1fr;
     background-color: var(--theme-color-1);
     gap: var(--gap-size);
     padding: var(--gap-size);
     margin: var(--gap-size);
     border-radius: var(--gap-size);
+}
+
+@media screen and (max-width: 449px) {
+    #settingsScreen:checked+section>form>div{
+        grid-template-columns: 1fr;
+    }
+    
+    #settingsScreen:checked+section{
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #settingsScreen:checked+section>form>div{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #settingsScreen:checked+section{
+        align-items: center;
+    }
 }
 
 #settingsScreen:checked+section>form>div>button,
