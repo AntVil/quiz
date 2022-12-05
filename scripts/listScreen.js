@@ -23,6 +23,8 @@ function loadQuestionList(){
 
     let allQuestionsElement = document.getElementById("listScreen").nextElementSibling;
     allQuestionsElement.innerHTML = "";
+
+    let questionIndex = 0;
     
     for(let category of Object.keys(categories)){
         // toggle
@@ -37,13 +39,9 @@ function loadQuestionList(){
         let headerTitle = document.createElement("h3");
         headerTitle.innerText = category;
 
-        //progress bar
-        var p = 20 + '%';  //ToDo
-        var r = document.querySelector(':root');
-        r.style.setProperty('--percentage', p);
-
         let categoryButton = document.createElement("button");
         categoryButton.ariaLabel = category;
+
         categoryButton.onclick = () => {
             loadListQuestion({
                 "questions": categories[category].map(([_, i]) => i),
@@ -82,6 +80,36 @@ function loadQuestionList(){
         let itemHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--list-item-height").split("px")[0]);
         categoryContent.style.height = `${itemHeight * categories[category].length + gapSize * Math.max(categories[category].length - 1, 0)}px`;
         allQuestionsElement.appendChild(categoryContent);
+        
+        //progress bar
+
+        statisticString = localStorage.getItem("quizStatistics");
+        statistic = [];
+        if(statisticString !== null && statisticString !== undefined && statisticString !== ""){
+            statistic = statisticString.split("").map(n => parseInt(n));
+        }
+
+        for(let i=statistic.length;i<quiz.length;i++){
+            statistic.push(STATISTICS_MAX_COUNT);
+        }
+
+        let category_stat = 0;
+        for(let i=questionIndex;i<(categories[category].length+questionIndex);i++){
+            let diff = statistic[i] - STATISTICS_MAX_COUNT;
+            if(diff > 0){
+                category_stat += diff;
+            }
+        }
+        questionIndex = categories[category].length - 1;
+
+        let p = (category_stat/(2*categories[category].length))*100;
+        
+        // this should work, but doesn't  ¯\_(ツ)_/¯ :
+        //categoryButton.setAttribute("style", "border-top: 5px solid");
+        //categoryButton.setAttribute("style", `border-image: linear-gradient(to rigth, green ${p}%, red ${p}%)`);
+        //so I still do this:
+        var r = document.querySelector(':root');
+        r.style.setProperty('--percentage', p + "%");
     }
 }
 
