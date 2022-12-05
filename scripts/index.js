@@ -13,7 +13,6 @@ window.onload = async function(){
     
     loadStatistic();
     loadQuestionList();
-    setupQuestionListStatistic();
 }
 
 window.onresize = () => {

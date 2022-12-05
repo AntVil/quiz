@@ -27,20 +27,6 @@ function loadStatistic(){
 }
 
 /**
- * Sets all statistics of all questions
- */
-function setupQuestionListStatistic(){
-    for(let i=0;i<statistic.length;i++){
-        let children = document.getElementById(`question${i}`).children;
-        let diff = statistic[i] - STATISTICS_MAX_COUNT;
-        let color = (diff > 0) ? "#0F0" : "#F00";
-        for(let j=0;j<Math.abs(diff);j++){
-            children[j].style.backgroundColor = color;
-        }
-    }
-}
-
-/**
  * Sets the statistic of the question at the given index
  * @param {int} index 
  * @param {boolean} isCorrect 
@@ -58,10 +44,21 @@ function updateStatistic(index, isCorrect){
     }
     saveStatistic();
     
-    let questionElement = document.getElementById(`question${index}`)
-    let children = questionElement.children;
-
     // single question
+    setQuestionDots(index);
+
+    // categories
+    setCategoryProgress(
+        document.getElementById(`question${index}`).parentElement.previousElementSibling
+    );
+}
+
+/**
+ * Sets the listScreen question dots
+ * @param {int} index 
+ */
+function setQuestionDots(index){
+    let children = document.getElementById(`question${index}`).children;
     let diff = statistic[index] - STATISTICS_MAX_COUNT;
     let color = (diff > 0) ? "#0F0" : "#F00";
     for(let i=0;i<Math.abs(diff);i++){
@@ -70,21 +67,25 @@ function updateStatistic(index, isCorrect){
     for(let i=Math.abs(diff);i<STATISTICS_MAX_COUNT;i++){
         children[i].style.backgroundColor = "";
     }
+}
 
-    // categories
+/**
+ * Sets the Progress for each category
+ * @param {HTMLElement} categoryElement 
+ */
+function setCategoryProgress(categoryElement){
     let binCount = [];
     for(let i=0;i<2 * STATISTICS_MAX_COUNT + 1;i++){
         binCount.push(0);
     }
-    console.log(questionElement)
-    for(let categoryQuestionElement of questionElement.parentElement.children){
-        let index = parseInt(categoryQuestionElement.id.slice(8));
+    for(let questionElement of categoryElement.nextElementSibling.children){
+        let index = parseInt(questionElement.id.slice(8));
         binCount[statistic[index]] += 1;
     }
 
     let borderImage = "linear-gradient(to right";
     let cumulativePercentage = 0;
-    let totalCount = questionElement.parentElement.children.length;
+    let totalCount = categoryElement.nextElementSibling.children.length;
     for(let i=0;i<binCount.length;i++){
         let percentage = 100 * (binCount[i] / totalCount);
         borderImage += `, ${STATISTICS_COLORS[i]} ${cumulativePercentage}%, ${STATISTICS_COLORS[i]} ${cumulativePercentage + percentage}%`;
@@ -93,7 +94,7 @@ function updateStatistic(index, isCorrect){
     }
     borderImage += ") 1";
 
-    questionElement.parentElement.previousElementSibling.style.borderImage = borderImage;
+    categoryElement.style.borderImage = borderImage;
 }
 
 /**

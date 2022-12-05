@@ -79,26 +79,11 @@ function loadQuestionList(){
         allQuestionsElement.appendChild(categoryContent);
         
         //progress bar
-        let binCount = [];
-        for(let i=0;i<2*STATISTICS_MAX_COUNT+1;i++){
-            binCount.push(0);
-        }
-        for(let [_, index] of categories[category]){
-            binCount[statistic[index]] += 1;
-        }
+        setCategoryProgress(header);
+    }
 
-        let borderImage = "linear-gradient(to right";
-        let cumulativePercentage = 0;
-        let totalCount = categories[category].length;
-        for(let i=0;i<binCount.length;i++){
-            let percentage = 100 * (binCount[i] / totalCount);
-            borderImage += `, ${STATISTICS_COLORS[i]} ${cumulativePercentage}%, ${STATISTICS_COLORS[i]} ${cumulativePercentage + percentage}%`;
-
-            cumulativePercentage += percentage;
-        }
-        borderImage += ") 1";
-
-        header.style.borderImage = borderImage;
+    for(let i=0;i<statistic.length;i++){
+        setQuestionDots(i);
     }
 }
 
