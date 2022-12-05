@@ -5,12 +5,12 @@
 }
 
 #settingsScreen:checked+section>form{
-    display: grid;
     grid-template-columns: auto;
     align-items: center;
     justify-content: center;
     gap: var(--gap-size);
     background-color: var(--theme-color-2);
+    width: 100%;
 }
 
 #settingsScreen:checked+section>form>div{
@@ -22,13 +22,20 @@
     border-radius: var(--gap-size);
 }
 
+
 @media screen and (max-width: 449px) {
     #settingsScreen:checked+section>form>div{
         grid-template-columns: 1fr;
+        align-content: center;
     }
     
     #settingsScreen:checked+section{
         overflow-y: scroll;
+    }
+
+    #settingsScreen:checked+section>form>div>label,
+    #settingsScreen:checked+section>form>div>select{
+        text-align: center;
     }
 }
 
@@ -39,6 +46,11 @@
 
     #settingsScreen:checked+section{
         align-items: center;
+        column-width: auto;
+    }
+
+    #settingsScreen:checked+section>form{
+        display: grid;
     }
 }
 
