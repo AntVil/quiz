@@ -367,7 +367,7 @@ function playAudio(positive){
 
     let volume = questionAudioContext.createGain();
     volume.connect(questionAudioContext.destination);
-    volume.gain.setValueAtTime(0.1 * parseFloat(document.getElementById("soundEffectGainSetting").value), questionAudioContext.currentTime);
+    volume.gain.setValueAtTime(parseFloat(document.getElementById("soundEffectGainSetting").value), questionAudioContext.currentTime);
     volume.gain.linearRampToValueAtTime(0, endTime);
 
     let oscillator = questionAudioContext.createOscillator();
