@@ -73,6 +73,7 @@
     background-color: var(--theme-color-2);
     border-radius: var(--gap-size);
     cursor: pointer;
+    text-align: unset;
 }
 
 #settingsScreen:checked+section>form>div>input[type="checkbox"]:checked+label{
