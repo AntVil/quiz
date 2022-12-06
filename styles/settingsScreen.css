@@ -67,6 +67,7 @@
     appearance: none;
     display: unset;
     position: relative;
+    width: 100%;
     height: var(--font-size);
 }
 
