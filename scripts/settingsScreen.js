@@ -48,9 +48,10 @@ let settingElementFunctions = {
             questionGenerationOptions.availableSeconds = parseInt(value);
         }
     },
-    "soundEffectGainSetting": ({value}) => {
-        // value is read directly
-        playAudio(true);
+    "soundEffectGainSetting": ({playSound}) => {
+        if(playSound){
+            playAudio(true);
+        }
     }
 };
 
@@ -82,7 +83,7 @@ function loadSettings(){
  * applies all settings and saves them for future sessions
  * @param {boolean} isStartUp 
  */
-function saveSettings(isStartUp){
+function saveSettings(isStartUp = false, playSound = false){
     let settings = {};
     for(let settingElementId of Object.keys(settingElementFunctions)){
         let settingElement = document.getElementById(settingElementId);
@@ -95,7 +96,8 @@ function saveSettings(isStartUp){
         settings[settingElementId] = value;
         settingElementFunctions[settingElementId]({
             value: value,
-            isStartUp: isStartUp
+            isStartUp: isStartUp,
+            playSound: playSound
         });
     }
     localStorage.setItem("quizSettings", JSON.stringify(settings));
