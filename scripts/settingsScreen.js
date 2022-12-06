@@ -50,7 +50,7 @@ let settingElementFunctions = {
     },
     "soundEffectGainSetting": ({value}) => {
         // value is read directly
-        playAudio();
+        playAudio(true);
     }
 };
 
