@@ -63,36 +63,41 @@
     font-size: var(--font-size);
 }
 
-#settingsScreen:checked+section>form>div>input[type="checkbox"]+label{
+#settingsScreen:checked+section>form>div>input[type="checkbox"]{
+    appearance: none;
+    display: unset;
     position: relative;
-    left: 50%;
-    top: 50%;
-    width: calc(2 * var(--font-size));
-    height: var(--font-size);
-    transform: translate(-50%, -50%);
-    background-color: var(--theme-color-2);
-    border-radius: var(--gap-size);
-    cursor: pointer;
-    text-align: unset;
 }
 
-#settingsScreen:checked+section>form>div>input[type="checkbox"]:checked+label{
+#settingsScreen:checked+section>form>div>input[type="checkbox"]::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: calc(2 * var(--font-size));
+    height: var(--font-size);
+    transform: translate(-50%, 0);
+    border-radius: 5px;
+    background-color: var(--theme-color-2);
+}
+
+#settingsScreen:checked+section>form>div>input[type="checkbox"]::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(50% - var(--font-size));
+    width: var(--font-size);
+    height: var(--font-size);
+    border-radius: 5px;
+    background-color: var(--theme-color-0);
+}
+
+#settingsScreen:checked+section>form>div>input[type="checkbox"]:checked::before{
     background-color: var(--theme-color-3);
 }
 
-#settingsScreen:checked+section>form>div>input[type="checkbox"]+label::after{
-    position: absolute;
-    content: "";
-    display: inline-block;
-    width: var(--font-size);
-    height: var(--font-size);
-    background-color: var(--theme-color-0);
-    border-radius: var(--gap-size);
-    cursor: pointer;
-}
-
-#settingsScreen:checked+section>form>div>input[type="checkbox"]:checked+label::after{
-    right: 0;
+#settingsScreen:checked+section>form>div>input[type="checkbox"]:checked::after{
+    transform: translate(var(--font-size), 0);
 }
 
 #settingsScreen:checked+section>form>div>input[type="range"]{
