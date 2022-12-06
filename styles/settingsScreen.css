@@ -67,6 +67,7 @@
     appearance: none;
     display: unset;
     position: relative;
+    height: var(--font-size);
 }
 
 #settingsScreen:checked+section>form>div>input[type="checkbox"]::before{
