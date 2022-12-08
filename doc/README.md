@@ -38,7 +38,7 @@
     - Der Nutzer wird informiert, falls ein Fehler aufgetreten ist
     - Ladeanimation wenn fragen geladen werden
 - Fragen können kopiert werden
-- Änderungen der Fragen werden bei anderen Nutzer ebenfalls sichtbar (verzögert)
+- Änderungen der Fragen werden bei anderen Nutzer ebenfalls sichtbar nach neuem öffnen (verzögert)
 - Splashscreen
 - Die App kann durch einen in-App QR-Code geteilt werden
 - Es gibt Soundeffekte
