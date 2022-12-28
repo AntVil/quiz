@@ -153,3 +153,4 @@ Wie sieht die Strukturformel von But-2-in aus?(ohne Wasserstoff)#organisch>C-C�
 Wie sieht die Strukturformel von n-Pentan aus?(ohne Wasserstoff)#organisch>C-C-C-C-C||C-C≡C-C|C-C=C-C-C|C-C=C-C|C≡C-C-C-C
 Wie sieht die Strukturformel von Pent-1-en-3-in aus?(ohne Wasserstoff)#organisch>C=C-C≡C-C||C-C-C-C-C|C-C≡C-C|C-C=C-C≡C|C-C=C-C|C≡C-C-C=C
 Was ist ein Radikal?#reaktion>reaktionsfreudiges Atom/Molekül||Instabiles Atom
+1#egal>2||3
